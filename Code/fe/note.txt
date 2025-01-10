@@ -1,0 +1,27 @@
+<head>
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfookkqAAAAAOgVEWGhFBWtCyIhEyoLtxqcjKBc"></script>
+  <!-- Your code -->
+</head>
+ID: 6LfookkqAAAAAOgVEWGhFBWtCyIhEyoLtxqcjKBc
+<script>
+  function onClick(e) {
+    e.preventDefault();
+    grecaptcha.enterprise.ready(async () => {
+      const token = await grecaptcha.enterprise.execute('6LfookkqAAAAAOgVEWGhFBWtCyIhEyoLtxqcjKBc', {action: 'LOGIN'});
+    });
+  }
+</script>
+
+{
+  "event": {
+    "token": "TOKEN",
+    "expectedAction": "USER_ACTION",
+    "siteKey": "6LfookkqAAAAAOgVEWGhFBWtCyIhEyoLtxqcjKBc",
+  }
+}
+
+siteKey:6LfI1kkqAAAAALVZp-i4Vrj2giDNy8JJ2W7axU2y
+secretkey:6LfI1kkqAAAAAMxHucu_YqW_S-YkXF5NVxHlL9qH
+
+
+https://recaptchaenterprise.googleapis.com/v1/projects/tanloc-project-1726803732995/assessments?key=API_KEY
