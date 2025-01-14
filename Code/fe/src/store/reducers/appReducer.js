@@ -10,7 +10,7 @@ const initContentOfConfirmModal = {
 const initialState = {
     started: true,
     language: 'vi',
-    systemMenuPath: '/system/user-redux',
+    systemMenuPath:'/system/admin',
     userRole: null,  // Thêm thuộc tính này để lưu vai trò người dùng
     contentOfConfirmModal: {
         ...initContentOfConfirmModal

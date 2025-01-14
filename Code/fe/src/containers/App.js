@@ -11,7 +11,6 @@ import Home from '../routes/Home';
 import Login from '../containers/Auth/Login'
 import Header from './Header/Header';
 import System from '../routes/System';
-import Account from '../routes/Account.js';
 import CustomScrollbars from '../components/CustomScrollbars.js';
 import { PhoneOutlined, MessageOutlined  } from '@ant-design/icons';
 import { FloatButton } from 'antd';
@@ -38,7 +37,10 @@ class App extends Component {
         this.handlePersistorState();
     }
     handleClick = () =>{
-        window.open('https://shop.mixigaming.com', '_blank');
+        window.open('https://www.facebook.com/nguyenloc2804', '_blank');
+    }
+    handleClick1 = () =>{
+        window.open('https://www.facebook.com/ngoc.huynh.946499', '_blank');
     }
     render() {
         return (
@@ -72,7 +74,7 @@ class App extends Component {
                         />
                         <FloatButton
                             icon={<MessageOutlined style={{ fontSize: '20px', color: 'white' }} />}
-                            onClick={()=> this.handleClick()}
+                            onClick={()=> this.handleClick1()}
                             type="primary"
                             className="custom-float-btn"
                             fontSizeIcon='20px'
