@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import "./AdminPage.scss";
 import "./General.scss"
 
-class DefaultClass extends Component {
+class AdminHeader extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -90,4 +90,4 @@ const mapDispatchToProps = dispatch => {
     return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DefaultClass);
+export default connect(mapStateToProps, mapDispatchToProps)(AdminHeader);

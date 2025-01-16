@@ -4,7 +4,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import "./AdminPage.scss";
 
-class DefaultClass extends Component {
+class AdminFooter extends Component {
     constructor(props)
     {
         super(props);
@@ -55,4 +55,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DefaultClass);
+export default connect(mapStateToProps, mapDispatchToProps)(AdminFooter);

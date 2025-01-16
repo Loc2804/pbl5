@@ -1,29 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="d06f703e-9388-482d-b589-a56b239ec6ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/testAI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/be.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/be.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/controllers/UserController.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/models/User.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/services/UserService.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/test1.html" beforeDir="false" />
-    </list>
+    <list default="true" id="d06f703e-9388-482d-b589-a56b239ec6ee" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -160,7 +141,7 @@
       <option name="presentableId" value="Default" />
       <updated>1736965375995</updated>
       <workItem from="1736965377139" duration="553000" />
-      <workItem from="1736966063774" duration="221000" />
+      <workItem from="1736966063774" duration="424000" />
     </task>
     <servers />
   </component>

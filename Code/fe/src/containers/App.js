@@ -12,10 +12,12 @@ import Login from '../containers/Auth/Login'
 import Header from './Header/Header';
 import System from '../routes/System';
 import CustomScrollbars from '../components/CustomScrollbars.js';
-import { PhoneOutlined, MessageOutlined  } from '@ant-design/icons';
+import { PhoneOutlined, MessageOutlined , InstagramOutlined} from '@ant-design/icons';
 import { FloatButton } from 'antd';
 import 'antd/dist/reset.css'; // Sử dụng phiên bản Ant Design mới hơn
-
+import SignIn from './System/User/UserAccount/SignIn.js';
+import ForgotPassword  from './System/User/UserAccount/ForgotPassword.js';
+import SignUp  from './System/User/UserAccount/SignUp.js';
 
 class App extends Component {
 
@@ -42,6 +44,9 @@ class App extends Component {
     handleClick1 = () =>{
         window.open('https://www.facebook.com/ngoc.huynh.946499', '_blank');
     }
+    handleClick2 = () =>{
+        window.open('https://www.facebook.com/an.van.26751', '_blank');
+    }
     render() {
         return (
             <Fragment>
@@ -55,8 +60,9 @@ class App extends Component {
                                 <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} />
                                 <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
 
-                                
-
+                                <Route path={path.SIGNIN} component={userIsNotAuthenticated(SignIn)} />
+                                <Route path={path.REGIST} exact component={(SignUp)} />
+                                <Route path={path.FORGOT} exact component={(ForgotPassword)} />
                             </Switch>  
                             </CustomScrollbars>
                         </div>
@@ -81,6 +87,18 @@ class App extends Component {
                             style={{
                                 insetInlineEnd: 24,      // Cách lề phải 24px
                                 bottom: 100,             // Cách đáy 100px
+                                // fontSize: '25px !important'          // Kích thước icon
+                            }}
+                        />
+                        <FloatButton
+                            icon={<InstagramOutlined style={{ fontSize: '20px', color: 'white' }} />}
+                            onClick={()=> this.handleClick2()}
+                            type="primary"
+                            className="custom-float-btn"
+                            fontSizeIcon='20px'
+                            style={{
+                                insetInlineEnd: 24,      // Cách lề phải 24px
+                                bottom: 50,             // Cách đáy 100px
                                 // fontSize: '25px !important'          // Kích thước icon
                             }}
                         />

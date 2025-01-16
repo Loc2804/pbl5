@@ -1,13 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from "react-redux";
 import { Redirect, Route, Switch } from 'react-router-dom';
+import './UserPage.scss'
 import { FormattedMessage } from 'react-intl';
-import "./AdminPage.scss";
-import AdminHeader from './AdminHeader';
-import AdminFooter from './AdminFooter';
-import AdminSection from './AdminSection';
-import DashBoardBody from './DashBoardBody';
-class AdminPage extends Component {
+
+class UserHeader extends Component {
     constructor(props)
     {
         super(props);
@@ -28,17 +25,7 @@ class AdminPage extends Component {
         
         return (
             <Fragment> 
-                <div className="sb-nav-fixed">
-                   <AdminHeader/>
-
-                    <div id="layoutSidenav">
-                        <AdminSection/>
-                        <div id="layoutSidenav_content">
-                            <DashBoardBody/>
-                            <AdminFooter/>
-                        </div>
-                    </div>
-                </div>
+                
             </Fragment>
         );
     }
@@ -57,4 +44,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AdminPage);
+export default connect(mapStateToProps, mapDispatchToProps)(UserHeader);
