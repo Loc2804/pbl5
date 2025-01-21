@@ -60,7 +60,7 @@ class App extends Component {
                                 <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} />
                                 <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
 
-                                <Route path={path.SIGNIN} component={userIsNotAuthenticated(SignIn)} />
+                                <Route path={path.SIGNIN} exact component={(SignIn)} />
                                 <Route path={path.REGIST} exact component={(SignUp)} />
                                 <Route path={path.FORGOT} exact component={(ForgotPassword)} />
                             </Switch>  

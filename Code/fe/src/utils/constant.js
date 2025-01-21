@@ -10,7 +10,7 @@ export const path = {
     BLOG:'/pages/blog',
     SERVICE:'/pages/service',
     REGIST:'/pages/regist',
-    SIGNIN:'/pages/signin',
+    SIGNIN:'/pages/logon',
     FORGOT:'/pages/forgot-password',
 };
 

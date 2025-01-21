@@ -4,7 +4,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import './UserAccount.scss';
 import { FormattedMessage } from 'react-intl';
 
-class UserAccount extends Component {
+class SignIn extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -30,7 +30,6 @@ class UserAccount extends Component {
     };
 
     render() {
-        const { isSignUp } = this.state;
 
         return (
             <Fragment>
@@ -103,4 +102,4 @@ const mapDispatchToProps = dispatch => {
     return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserAccount);
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
