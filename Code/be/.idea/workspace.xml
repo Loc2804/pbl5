@@ -4,11 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d06f703e-9388-482d-b589-a56b239ec6ee" name="Changes" comment="" />
+    <list default="true" id="d06f703e-9388-482d-b589-a56b239ec6ee" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/kiemdinhgiathuyet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PBL5_be/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PBL5_be/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PBL5_be/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PBL5_be/controllers/UserController.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PBL5_be/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PBL5_be/models/User.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PBL5_be/services/UserService.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PBL5_be/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PBL5_be/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testAI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/Kolors-Virtual-Try-On" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -24,13 +45,18 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Python.kiemdinhgiathuyet (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.manage.executor&quot;: &quot;Run&quot;,
     &quot;Python.python manage.py runserver.executor&quot;: &quot;Run&quot;,
+    &quot;Python.runModel.executor&quot;: &quot;Run&quot;,
     &quot;Python.testAI.executor&quot;: &quot;Run&quot;,
+    &quot;Python.testModel.executor&quot;: &quot;Run&quot;,
+    &quot;Python.views.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/PBL5/Code/be&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -45,10 +71,29 @@
       <command value="pip install mysqlclient" />
       <command value="pip install mysqlclient " />
       <command value="pip install mediapipe" />
+      <command value="pip install silence_tensorflow " />
+      <command value="python.exe -m pip install --upgrade pip" />
+      <command value="pip install pandas" />
+      <command value="pip install seaborn" />
+      <command value="pip install termcolor tensorflow keras" />
+      <command value="pip install sklearn" />
+      <command value="pip install scikit-learn" />
+      <command value="pip install scikit-learn " />
+      <command value="pip install pydot" />
+      <command value="pip install graphviz" />
+      <command value="pip list" />
+      <command value="pip install tensorflow-rocm" />
+      <command value="pip install tensorflow-avx512" />
+      <command value="pip install --upgrade tensorflow" />
+      <command value="pip install --upgrade tensorflow " />
+      <command value="pip uninstall tensorflow pip install tensorflow-cpu --upgrade" />
+      <command value="pip uninstall tensorflow pip install tensorflow-cpu --upgrade " />
+      <command value="pip uninstall tensorflow" />
+      <command value="pip install silence_tensorflow" />
     </option>
   </component>
-  <component name="RunManager" selected="Python.testAI">
-    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.runModel">
+    <configuration name="kiemdinhgiathuyet (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="be" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -62,7 +107,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/kiemdinhgiathuyet.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -71,7 +116,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="python manage.py runserver" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="kiemdinhgiathuyet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="be" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -85,8 +130,31 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="manage.py" />
-      <option name="PARAMETERS" value="runserver" />
+      <option name="SCRIPT_NAME" value="D:\PBL5\Code\be\kiemdinhgiathuyet.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="runModel" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="be" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/runModel.py" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -109,6 +177,29 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testAI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="be" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/views.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -143,9 +234,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.runModel" />
+        <item itemvalue="Python.views" />
+        <item itemvalue="Python.kiemdinhgiathuyet (1)" />
+        <item itemvalue="Python.kiemdinhgiathuyet" />
         <item itemvalue="Python.testAI" />
-        <item itemvalue="Python.python manage.py runserver" />
-        <item itemvalue="Python.manage" />
       </list>
     </recent_temporary>
   </component>
@@ -172,6 +265,16 @@
       <workItem from="1737211101234" duration="64000" />
       <workItem from="1737376526563" duration="7000" />
       <workItem from="1737809974041" duration="90000" />
+      <workItem from="1739173400389" duration="696000" />
+      <workItem from="1739324022054" duration="536000" />
+      <workItem from="1739407054079" duration="687000" />
+      <workItem from="1739780026443" duration="229000" />
+      <workItem from="1739890534609" duration="2923000" />
+      <workItem from="1739924882989" duration="1806000" />
+      <workItem from="1739926758935" duration="5074000" />
+      <workItem from="1739955123734" duration="1425000" />
+      <workItem from="1740013965318" duration="1618000" />
+      <workItem from="1740015603774" duration="45000" />
     </task>
     <servers />
   </component>
@@ -179,7 +282,11 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/be$testAI.coverage" NAME="testAI Coverage Results" MODIFIED="1737211116796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/be$runModel.coverage" NAME="runModel Coverage Results" MODIFIED="1740015430140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/be$testAI.coverage" NAME="testAI Coverage Results" MODIFIED="1739780143779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/be$kiemdinhgiathuyet__1_.coverage" NAME="kiemdinhgiathuyet (1) Coverage Results" MODIFIED="1739924927938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$python_manage_py_runserver.coverage" NAME="python manage.py runserver Coverage Results" MODIFIED="1736966215814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/be$testModel.coverage" NAME="testModel Coverage Results" MODIFIED="1739893230367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/be$views.coverage" NAME="views Coverage Results" MODIFIED="1739930390263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
