@@ -20,7 +20,7 @@ class ForgotPassword extends Component {
     async componentDidUpdate(prevProps, prevState, snapshot) {
           
     }
- handleOnChangeInput = (event, id) => {
+    handleOnChangeInput = (event, id) => {
             let copyState = { ...this.state };
             copyState[id] = event.target.value;
             this.setState({

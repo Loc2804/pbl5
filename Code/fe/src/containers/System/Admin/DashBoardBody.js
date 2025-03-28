@@ -26,21 +26,21 @@ class DashBoardBody extends Component {
 
     render() {     
     const usersChartData = {
-        labels: ["Admin", "User", "Guest"],
+        labels: ["Admin", "User"],
         datasets: [
             {
                 label: "Users",
-                data: [300, 300, 300],
-                backgroundColor: ["#007bff", "#6c757d", "#ffc107"],
+                data: [300, 300],
+                backgroundColor: ["#007bff","#ffc107"],
             },
         ],
     };
 
     const productsChartData = {
-        labels: ["Electronics", "Clothing", "Home Appliances"],
+        labels: ["Vegetables", "Fruits", "Produce"],
         datasets: [
             {
-                label: "Products Sold",
+                label: "Vocabularies",
                 data: [120, 90, 60],
                 backgroundColor: ["#28a745", "#007bff", "#ffc107"],
                 innerHeight: 100,
@@ -74,8 +74,8 @@ class DashBoardBody extends Component {
                                 <p className="card-content">Total Users: 1200</p>
                             </div>
                             <div className="col-5 mx-3 products-data card">
-                                <h3 className="card-title">Products Data</h3>
-                                <p className="card-content">Total Products: 450</p>
+                                <h3 className="card-title">Vocabularies Data</h3>
+                                <p className="card-content">Total Vocabularies: 450</p>
                             </div>
                             <div className='col-12 mx-3 mt-3'><h2>CHART</h2></div>
                             <div className="col-5 mx-3 users-chart chart">
@@ -83,7 +83,7 @@ class DashBoardBody extends Component {
                                 <Pie data={usersChartData} options={chartOptions} />
                             </div>
                             <div className="col-5 mx-3 products-chart chart">
-                                <h4 className="chart-title">Products Overview</h4>
+                                <h4 className="chart-title">Vocabularies Overview</h4>
                                 <Bar data={productsChartData} options={chartOptions} />
                             </div>
                         </div>

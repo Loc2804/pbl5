@@ -18,6 +18,7 @@ import 'antd/dist/reset.css'; // Sử dụng phiên bản Ant Design mới hơn
 import SignIn from './System/User/UserAccount/SignIn.js';
 import ForgotPassword  from './System/User/UserAccount/ForgotPassword.js';
 import SignUp  from './System/User/UserAccount/SignUp.js';
+import ManageUser from './System/Admin/ManageUser.js';
 
 class App extends Component {
 

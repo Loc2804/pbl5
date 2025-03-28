@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { Redirect, Route, Switch } from 'react-router-dom';
-
+import { Router, Redirect, Route, Switch } from 'react-router-dom';
+import { history } from '../redux'
 import Header from '../containers/Header/Header';
 import AdminPage from '../containers/System/Admin/AdminPage'
+import ManageUser from '../containers/System/Admin/ManageUser'
+import ManageVoc from '../containers/System/Admin/ManageVoc'
 class System extends Component {
     render() {     
         const { systemMenuPath, isLoggedIn, userInfo } = this.props;
@@ -11,14 +13,18 @@ class System extends Component {
             // userInfo && userInfo.roleId === 'ad' ? (
                 <React.Fragment>
                     {/* {isLoggedIn && <Header />}  */}
+                    <Router history={history}>
                     <div className="system-container">
                         <div className="system-list">
                             <Switch>
-                                <Route path="/system/admin" component={AdminPage} /> 
-                                <Route component={() => <Redirect to={systemMenuPath} />} />
+                                <Route exact path="/system/admin" component={AdminPage} /> 
+                                <Route path="/system/admin/user" exact component={ManageUser} /> 
+                                <Route path="/system/admin/voc" exact component={ManageVoc} /> 
+                                <Route component={() => <Redirect to={"/system/admin"} />} />
                             </Switch>
                         </div>
                     </div>
+                    </Router>
                 </React.Fragment>
             // ) : (
             //     <div>
@@ -38,6 +44,7 @@ const mapStateToProps = state => {
         systemMenuPath: state.app.systemMenuPath,
         isLoggedIn: state.user.isLoggedIn,
         userInfo : state.user.userInfo,
+        started: state.app.started,
     };
 };
 

@@ -36,10 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'PBL5_be.apps.Pbl5BeConfig',
     'rest_framework',
     'corsheaders',
-
+    'be',
 ]
 
 MIDDLEWARE = [

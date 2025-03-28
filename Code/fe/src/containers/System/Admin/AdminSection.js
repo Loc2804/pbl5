@@ -3,10 +3,15 @@ import { connect } from "react-redux";
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import "./AdminPage.scss";
+import { withRouter } from 'react-router-dom';
+import {injectIntl } from 'react-intl';
+import { Link } from 'react-router-dom';
 
 class AdminSection extends Component {
+    
     constructor(props)
     {
+        
         super(props);
         this.state = {
             
@@ -21,8 +26,13 @@ class AdminSection extends Component {
           
     }
 
+    changePage = (link, event) => {
+        event.preventDefault(); // Ngăn trang web tải lại
+        this.props.history.push(link); // Điều hướng đúng cách
+    };
+
     render() {     
-        
+        const currentPath = this.props.location.pathname; // Lấy đường dẫn hiện tại
         return (
             <Fragment> 
                 <div id="layoutSidenav_nav">
@@ -30,24 +40,29 @@ class AdminSection extends Component {
                     <div className="sb-sidenav-menu">
                     <div className="nav">
                         <div className="sb-sidenav-menu-heading">Core</div>
-                        <a className="nav-link" href="index.html">
-                            <div className="sb-nav-link-icon">
-                                {/* <FontAwesomeIcon icon={faTachometerAlt} /> */}
-                            </div>
-                            Dashboard
-                        </a>
-                        <a className="nav-link" href="index.html">
-                            <div className="sb-nav-link-icon">
-                                {/* <FontAwesomeIcon icon={faTachometerAlt} /> */}
-                            </div>
-                            Users
-                        </a>
-                        <a className="nav-link" href="index.html">
-                            <div className="sb-nav-link-icon">
-                                {/* <FontAwesomeIcon icon={faTachometerAlt} /> */}
-                            </div>
-                            Products
-                        </a>
+                            <a 
+                                className={`nav-link ${currentPath === "/system/admin" ? "active" : ""}`}  
+                                href="/system/admin" 
+                                onClick={(e) => { this.changePage('/system/admin',e); }}
+                            >
+                                Dashboard
+                            </a>
+
+                            <a 
+                                className={`nav-link ${currentPath === "/system/admin/user" ? "active" : ""}`}  
+                                href="/system/admin/user" 
+                                onClick={(e) => { this.changePage('/system/admin/user',e); }}
+                            >
+                                Users
+                            </a>
+
+                            <a 
+                                className={`nav-link ${currentPath === "/system/admin/voc" ? "active" : ""}`}  
+                                href="/system/admin/voc" 
+                                onClick={(e) => { this.changePage('/system/admin/voc',e); }}
+                            >
+                                Vocabularies
+                            </a>
                         <div className="sb-sidenav-menu-heading">Interface</div>
                         <a className="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts">
                             <div className="sb-nav-link-icon">
@@ -99,4 +114,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AdminSection);
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(injectIntl(AdminSection)));

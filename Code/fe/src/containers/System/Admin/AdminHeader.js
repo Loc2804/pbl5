@@ -64,6 +64,7 @@ class AdminHeader extends Component {
                             </a>
                             {this.state.isShowDropDown ? (
                                 <ul className="dropdown-menu dropdown-menu-end" ref={this.dropdownRef} aria-labelledby="navbarDropdown" style={{ display: 'block' }}>
+                                    <li><a className="dropdown-item" href="#!">Manage Account</a></li>
                                     <li><a className="dropdown-item" href="#!">Settings</a></li>
                                     <li><a className="dropdown-item" href="#!">Activity Log</a></li>
                                     <li><hr className="dropdown-divider" /></li>

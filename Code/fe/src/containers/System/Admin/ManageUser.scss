@@ -1,0 +1,10 @@
+.body-container{
+    .body-title{
+        margin: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        .btn-add{
+            border-radius: 10px;
+        }
+    }
+}
