@@ -17,6 +17,13 @@ Including another URLconf
 # from django.contrib import admin
 from django.urls import path
 
+from django.urls import path
+from be.controllers.UserController import UserListView, UserDetailView, LoginView, AccountView, ForgotPasswordView
+
 urlpatterns = [
-    #    path('admin/', admin.site.urls),
+    path('api/login/', LoginView.as_view(), name='user-login'),
+    path('api/account/', AccountView.as_view(), name='user-account'),  # PUT & POST
+    path('api/forgot-password/', ForgotPasswordView.as_view(), name='user-forgot-password'), # put
+    path('api/users/', UserListView.as_view(), name='user-list'),          # GET & POST
+    path('api/users/<int:user_id>/', UserDetailView.as_view(), name='user-detail'),  # GET, PUT & DELETE
 ]
