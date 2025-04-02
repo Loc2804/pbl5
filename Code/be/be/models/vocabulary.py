@@ -3,7 +3,7 @@ from django.db import models
 from .category import Category
 
 class Vocabulary(models.Model):
-    word = models.CharField(max_length=255)
+    word = models.CharField(max_length=255,unique=True)
     pronunciation = models.CharField(max_length=255, blank=True, null=True)
     meaning = models.TextField()
     image = models.ImageField(upload_to='vocabulary_images/', blank=True, null=True)

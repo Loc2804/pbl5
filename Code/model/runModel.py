@@ -19,7 +19,7 @@ def preprocess_image(img_path):
     img_array = img_array / 255.0  # Chuẩn hóa nếu cần
     return img_array
 # Đọc và tiền xử lý ảnh
-img_path = "duriantest4.jpg"  # Đường dẫn ảnh cần nhận diện
+img_path = "4ae0769f4e269478cd37.jpg"  # Đường dẫn ảnh cần nhận diện
 img_array = preprocess_image(img_path)
 
 # Dự đoán

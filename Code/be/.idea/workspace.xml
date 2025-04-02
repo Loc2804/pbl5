@@ -5,17 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d06f703e-9388-482d-b589-a56b239ec6ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/be/controllers/AuthController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/be/controllers/UserController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/be/controllers/VocabularyController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/be/serializers/UserResponseSerializer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/be/serializers/UserSerializer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/be/services/UserService.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/be/services/VocabularyService.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/be/serializers/VocabularySerializer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../model/ModelCameraNoSound.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../model/ModelDetection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/models/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/controllers/VocabularyController.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/controllers/VocabularyController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/models/vocabulary.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/models/vocabulary.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/services/VocabularyService.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/services/VocabularyService.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/be/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kiemdinhgiathuyet.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/appletest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/cucumbertest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/duriantest1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/duriantest2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/duriantest3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/duriantest4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/mangotest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/orange1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/orange2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/runModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/../model/runModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/watermelon.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,35 +53,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.kiemdinhgiathuyet (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.manage.executor&quot;: &quot;Run&quot;,
-    &quot;Python.python manage.py makemigrations be.executor&quot;: &quot;Run&quot;,
-    &quot;Python.python manage.py makemigrations.executor&quot;: &quot;Run&quot;,
-    &quot;Python.python manage.py migrate.executor&quot;: &quot;Run&quot;,
-    &quot;Python.python manage.py runserver.executor&quot;: &quot;Run&quot;,
-    &quot;Python.python manage.py showmigrations.executor&quot;: &quot;Run&quot;,
-    &quot;Python.runModel.executor&quot;: &quot;Run&quot;,
-    &quot;Python.testAI.executor&quot;: &quot;Run&quot;,
-    &quot;Python.testModel.executor&quot;: &quot;Run&quot;,
-    &quot;Python.views.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/PBL5/Code/be&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.kiemdinhgiathuyet (1).executor": "Run",
+    "Python.manage.executor": "Run",
+    "Python.python manage.py makemigrations be.executor": "Run",
+    "Python.python manage.py makemigrations.executor": "Run",
+    "Python.python manage.py migrate.executor": "Run",
+    "Python.python manage.py runserver.executor": "Run",
+    "Python.python manage.py showmigrations.executor": "Run",
+    "Python.runModel.executor": "Run",
+    "Python.testAI.executor": "Run",
+    "Python.testModel.executor": "Run",
+    "Python.views.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/PBL5/Code/be",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="pip install mediapipe" />
@@ -110,7 +119,7 @@
       <command value="python manage.py runserver " />
     </option>
   </component>
-  <component name="RunManager" selected="Python.python manage.py runserver">
+  <component name="RunManager" selected="Python.python manage.py migrate">
     <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="be" />
       <option name="ENV_FILES" value="" />
@@ -252,9 +261,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.python manage.py runserver" />
         <item itemvalue="Python.python manage.py migrate" />
         <item itemvalue="Python.python manage.py makemigrations be" />
+        <item itemvalue="Python.python manage.py runserver" />
         <item itemvalue="Python.manage" />
         <item itemvalue="Python.python manage.py makemigrations python manage.py migrate" />
       </list>
@@ -304,6 +313,13 @@
       <workItem from="1743356116848" duration="783000" />
       <workItem from="1743392742604" duration="296000" />
       <workItem from="1743393621041" duration="2259000" />
+      <workItem from="1743440327782" duration="14000" />
+      <workItem from="1743481662074" duration="590000" />
+      <workItem from="1743493380037" duration="1178000" />
+      <workItem from="1743495442193" duration="143000" />
+      <workItem from="1743555630970" duration="6000" />
+      <workItem from="1743556928506" duration="14000" />
+      <workItem from="1743603072401" duration="1100000" />
     </task>
     <servers />
   </component>
@@ -314,12 +330,12 @@
     <SUITE FILE_PATH="coverage/be$runModel.coverage" NAME="runModel Coverage Results" MODIFIED="1740015430140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$python_manage_py_makemigrations.coverage" NAME="python manage.py makemigrations Coverage Results" MODIFIED="1743178624531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$testAI.coverage" NAME="testAI Coverage Results" MODIFIED="1739780143779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/be$python_manage_py_migrate.coverage" NAME="python manage.py migrate Coverage Results" MODIFIED="1743346842094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/be$python_manage_py_migrate.coverage" NAME="python manage.py migrate Coverage Results" MODIFIED="1743603152790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$manage.coverage" NAME="manage Coverage Results" MODIFIED="1743324947852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$kiemdinhgiathuyet__1_.coverage" NAME="kiemdinhgiathuyet (1) Coverage Results" MODIFIED="1739924927938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$python_manage_py_showmigrations.coverage" NAME="python manage.py showmigrations Coverage Results" MODIFIED="1743178750501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/be$python_manage_py_makemigrations_be.coverage" NAME="python manage.py makemigrations be Coverage Results" MODIFIED="1743346836082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/be$python_manage_py_runserver.coverage" NAME="python manage.py runserver Coverage Results" MODIFIED="1743356763265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/be$python_manage_py_makemigrations_be.coverage" NAME="python manage.py makemigrations be Coverage Results" MODIFIED="1743603142404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/be$python_manage_py_runserver.coverage" NAME="python manage.py runserver Coverage Results" MODIFIED="1743493581385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$testModel.coverage" NAME="testModel Coverage Results" MODIFIED="1739893230367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$views.coverage" NAME="views Coverage Results" MODIFIED="1739930390263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
