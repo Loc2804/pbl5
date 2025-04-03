@@ -13,39 +13,43 @@ from rest_framework import status
 class UserListView(views.APIView):
     # Lấy danh sách tất cả người dùng
     def get(self, request):
-        users = get_all_users()
-        serializer = UserSerializer(users, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        response = get_all_users()
+        return Response(response, status=status.HTTP_200_OK)
 
     # Tạo mới người dùng
     def post(self, request):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
-            user = create_user(serializer.validated_data)
-            return Response(UserSerializer(user).data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+            response = create_user(serializer.validated_data)
+            if response["errCode"] == 0:
+                return Response(response, status=status.HTTP_201_CREATED)
+            return Response(response, status=status.HTTP_400_BAD_REQUEST)
+        return Response({"errCode": 1, "message": "Validation failed", "errors": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
 
 class UserDetailView(views.APIView):
     # Lấy thông tin người dùng theo ID
     def get(self, request, user_id):
-        user = get_user_by_id(user_id)
-        serializer = UserSerializer(user)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        response = get_user_by_id(user_id)
+        if response["errCode"] == 0:
+            return Response(response, status=status.HTTP_200_OK)
+        return Response(response, status=status.HTTP_404_NOT_FOUND)
 
     # Cập nhật thông tin người dùng
     def put(self, request, user_id):
-        user = get_user_by_id(user_id)
-        serializer = UserSerializer(user, data=request.data, partial=True)
+        serializer = UserSerializer(data=request.data, partial=True)
         if serializer.is_valid():
-            updated_user = update_user(user_id, serializer.validated_data)
-            return Response(UserSerializer(updated_user).data, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            response = update_user(user_id, serializer.validated_data)
+            if response["errCode"] == 0:
+                return Response(response, status=status.HTTP_200_OK)
+            return Response(response, status=status.HTTP_400_BAD_REQUEST)
+        return Response({"errCode": 1, "message": "Validation failed", "errors": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
 
     # Xóa người dùng
     def delete(self, request, user_id):
-        delete_user(user_id)
-        return Response({"message": "User deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
+        response = delete_user(user_id)
+        if response["errCode"] == 0:
+            return Response(response, status=status.HTTP_204_NO_CONTENT)
+        return Response(response, status=status.HTTP_404_NOT_FOUND)
 
 class LoginView(views.APIView):
     def post(self, request):

@@ -8,6 +8,28 @@ const handleLoginApi = (userEmail,userPassword) =>{
     } );
 }
 
+const getAllUserService = () => {
+    return axios.get('/api/users')
+}
+
+
+const getUserById = (inputId) => {
+    return axios.get(`/api/users/${inputId}`)
+}
+
+const createNewUserService = (data) =>{
+    return axios.post('/api/users', data)
+}
+
+const deleteUserService = (userId) =>{
+    return axios.delete(`/api/users/userId`)
+}
+
+const editUserService = (data) =>{
+    return axios.put(`/api/users/${data.id}`, data);
+}
+
 export {
-    handleLoginApi
+    handleLoginApi, getAllUserService, createNewUserService, 
+    deleteUserService, editUserService, getUserById,
 };

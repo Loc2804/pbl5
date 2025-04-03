@@ -30,16 +30,19 @@ class AddUser extends Component {
         return (
             isShow === true ? 
             <Fragment> 
-                <div className='add-container'>
-                    <div className='add-title'>
-                        <h3 className='center'>Add new user</h3>
-                        <button className='btn btn-danger' onClick={() => this.closeModal()}>x</button>
+                <div className={`add-container ${this.props.isShow ? 'show' : ''}`}>
+                    <div className="modal-content">
+                        <div className='add-title'>
+                            <h3 className='center'>Add new user</h3>
+                            <button className='btn-close' onClick={this.closeModal}></button>
+                        </div>
+                        <div className='add-body'>
+                        </div>
                     </div>
                 </div>
             </Fragment>
             :
             ''
-            
         );
     }
 }

@@ -3,8 +3,6 @@ import actionTypes from '../actions/actionTypes';
 const initialState = {
     isLoggedIn: false,
     userInfo: null,
-    listUser:[],
-    listVoc:[],
 }
 
 const appReducer = (state = initialState, action) => {
