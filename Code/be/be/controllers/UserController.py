@@ -23,8 +23,8 @@ class UserListView(views.APIView):
             response = create_user(serializer.validated_data)
             if response["errCode"] == 0:
                 return Response(response, status=status.HTTP_201_CREATED)
-            return Response(response, status=status.HTTP_400_BAD_REQUEST)
-        return Response({"errCode": 1, "message": "Validation failed", "errors": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(response, status=status.HTTP_200_OK)
+        return Response({"errCode": 1, "message": "Validation failed"}, status=status.HTTP_200_OK)
 
 class UserDetailView(views.APIView):
     # Lấy thông tin người dùng theo ID
@@ -32,24 +32,22 @@ class UserDetailView(views.APIView):
         response = get_user_by_id(user_id)
         if response["errCode"] == 0:
             return Response(response, status=status.HTTP_200_OK)
-        return Response(response, status=status.HTTP_404_NOT_FOUND)
+        return Response(response, status=status.HTTP_200_OK)  # Changed to 200 OK
 
     # Cập nhật thông tin người dùng
     def put(self, request, user_id):
-        serializer = UserSerializer(data=request.data, partial=True)
-        if serializer.is_valid():
-            response = update_user(user_id, serializer.validated_data)
+            response = update_user(user_id, request.data)
             if response["errCode"] == 0:
                 return Response(response, status=status.HTTP_200_OK)
-            return Response(response, status=status.HTTP_400_BAD_REQUEST)
-        return Response({"errCode": 1, "message": "Validation failed", "errors": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(response, status=status.HTTP_200_OK)  # Changed to 200 OK
+
 
     # Xóa người dùng
     def delete(self, request, user_id):
         response = delete_user(user_id)
         if response["errCode"] == 0:
-            return Response(response, status=status.HTTP_204_NO_CONTENT)
-        return Response(response, status=status.HTTP_404_NOT_FOUND)
+            return Response({"errCode": response["errCode"], "message": response["message"]}, status=status.HTTP_200_OK)
+        return Response({"errCode": response["errCode"], "message": response["message"]}, status=status.HTTP_200_OK)  # Changed to 200 OK
 
 class LoginView(views.APIView):
     def post(self, request):
@@ -57,7 +55,7 @@ class LoginView(views.APIView):
         password = request.data.get("password")
 
         if not username or not password:
-            return Response({"error": "Username and password are required."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "Username and password are required."}, status=status.HTTP_200_OK)  # Changed to 200 OK
 
         # Xác thực người dùng thay vì kiểm tra dữ liệu đầu vào bằng serializer
         user_data = login_user(username, password)
@@ -65,7 +63,7 @@ class LoginView(views.APIView):
         if user_data:
             return Response(UserResponseSerializer(user_data).data, status=status.HTTP_200_OK)
 
-        return Response({"error": "Invalid username or password."}, status=status.HTTP_401_UNAUTHORIZED)
+        return Response({"error": "Invalid username or password."}, status=status.HTTP_200_OK)  # Changed to 200 OK
 
 class AccountView(views.APIView):
     def post(self, request):
@@ -76,12 +74,11 @@ class AccountView(views.APIView):
         full_name = data.get("full_name")
 
         if not all([username, password, full_name]):
-            return Response({"error": "Username, password, and full_name are required."},
-                            status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "Username, password, and full_name are required."}, status=status.HTTP_200_OK)  # Changed to 200 OK
 
         user = create_user(data)
         if not user:
-            return Response({"error": "Register failed."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "Register failed."}, status=status.HTTP_200_OK)  # Changed to 200 OK
 
         return Response({"Message": "Register Successful."}, status=status.HTTP_200_OK)
 
@@ -91,7 +88,7 @@ class AccountView(views.APIView):
         if response["errCode"] == 0:
             return Response({"Message": response["message"], "data" : response["data"]}, status=status.HTTP_200_OK)
 
-        return Response({"Error": response["error"]}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({"Error": response["error"]}, status=status.HTTP_200_OK)  # Changed to 200 OK
 
 
 class ForgotPasswordView(views.APIView):
@@ -100,11 +97,10 @@ class ForgotPasswordView(views.APIView):
         username = request.data.get("username")
         phone = request.data.get("phone")
         if not username or not phone:
-            return Response({"error": "Username and phone are required."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "Username and phone are required."}, status=status.HTTP_200_OK)  # Changed to 200 OK
 
         response = set_default_password(username, phone)
         if response['errCode'] == 0:
             return Response({"message": response['message']}, status=status.HTTP_200_OK)
 
-        return Response({"error": response['error']}, status=status.HTTP_400_BAD_REQUEST)
-
+        return Response({"error": response['error']}, status=status.HTTP_200_OK)  # Changed to 200 OK

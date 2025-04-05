@@ -3,6 +3,7 @@ import actionTypes from '../actions/actionTypes';
 const initialState = {
     listUser:[],
     listVoc:[],
+    listCategory:[],
 }
 
 const adminReducer = (state = initialState, action) => {

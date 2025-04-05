@@ -1,7 +1,10 @@
 from be.models.user import User
+from be.models.role import Role
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ValidationError, ObjectDoesNotExist
 from django.contrib.auth.hashers import make_password
+
+from be.serializers.UserResponseSerializer import UserResponseSerializer
 
 
 # Kiểm tra username đã tồn tại hay chưa
@@ -9,10 +12,23 @@ def username_exists(username):
     return User.objects.filter(username=username).exists()
 
 
-# Lấy tất cả người dùng
 def get_all_users():
-    users = User.objects.all()
-    return {"errCode": 0, "message": "Success", "data": list(users.values())}
+    users = User.objects.select_related('role').all()
+    user_list = []
+    for user in users:
+        user_list.append({
+            "id": user.id,
+            "username": user.username,
+            "full_name": user.full_name,
+            "phone": user.phone,
+            "address": user.address,
+            "role": {
+                "role_id": user.role.id if user.role else None,
+                "role_value": user.role.role_value if user.role else None,
+                # Thêm các trường khác của role nếu cần
+            }
+        })
+    return {"errCode": 0, "message": "Success", "data": user_list}
 
 
 # Lấy người dùng theo ID
@@ -23,35 +39,43 @@ def get_user_by_id(user_id):
     return {"errCode": 0, "message": "Success", "data": user}
 
 
-# Tạo mới người dùng
 def create_user(data):
-    if "username" in data and username_exists(data["username"]):
+    if "username" not in data:
+        return {"errCode": 1, "message": "Username is required"}
+
+    if username_exists(data["username"]):
         return {"errCode": 1, "message": "Username already exists"}
 
-    if "password" in data:
-        data["password"] = make_password(data["password"])  # Hash mật khẩu
+    if "password" not in data:
+        return {"errCode": 1, "message": "Password is required"}
+
+    data["password"] = make_password(data["password"])  # Hash mật khẩu
 
     user = User.objects.create(**data)
-    return {"errCode": 0, "message": "User created successfully", "data": user}
+    return {"errCode": 0, "message": "User created successfully"}
 
 
-# Cập nhật người dùng
+
 def update_user(user_id, data):
+    # Tìm user bằng id
     user = User.objects.filter(id=user_id).first()
     if not user:
         return {"errCode": 1, "message": "User not found"}
 
-    if "username" in data and username_exists(data["username"]) and user.username != data["username"]:
-        return {"errCode": 2, "message": "Username already exists"}
-
-    if "password" in data:
-        data["password"] = make_password(data["password"])  # Hash mật khẩu mới
-
+    # Chỉ cập nhật những trường cần thiết
     for key, value in data.items():
-        setattr(user, key, value)  # Gán giá trị mới
-    user.save()
-    return {"errCode": 0, "message": "User updated successfully", "data": user}
+        if key == 'role':  # Kiểm tra trường 'role'
+            try:
+                role = Role.objects.get(id=value)  # Lấy Role với id là value
+                setattr(user, key, role)  # Gán đối tượng Role vào trường role
+            except Role.DoesNotExist:
+                return {"errCode": 2, "message": "Role not found"}
+        elif key in ['full_name', 'phone', 'address']:  # Các trường khác
+            setattr(user, key, value)  # Gán giá trị mới cho trường
+    user.save()  # Lưu lại thay đổi
 
+    user_data = UserResponseSerializer(user).data  # serialize đối tượng user
+    return {"errCode": 0, "message": "User updated successfully", "data": user_data}
 
 # Xóa người dùng
 def delete_user(user_id):

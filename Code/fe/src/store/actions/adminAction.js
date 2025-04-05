@@ -3,9 +3,7 @@ import { getAllUserService} from '../../services/userService';
 import { toast } from 'react-toastify';
 // import { types } from 'node-sass';
 
-
-
-export const getAllUser = () => {
+export const getAllUserStart = () => {
     return async(dispatch, getState) =>{
         try {
             let res = await getAllUserService();
@@ -17,7 +15,7 @@ export const getAllUser = () => {
                 dispatch(getAllUserFailed());
             }
         } catch (error) {
-            toast.error("Error from server !");
+            toast.error("Error from server-2 !");
             dispatch(getAllUserFailed());
             console.log("Error from server: ",error);
         }
