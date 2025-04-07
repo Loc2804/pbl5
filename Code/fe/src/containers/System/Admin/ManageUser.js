@@ -12,6 +12,7 @@ import AddUser from './UserComponent/AddUser';
 import {getAllUserService, createNewUserService, deleteUserService, editUserService } from '../../../services/userService';
 import ReactPaginate from 'react-paginate';
 import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 class ManageUser extends Component {
     constructor(props)
     {
@@ -95,17 +96,27 @@ class ManageUser extends Component {
             toast.error(res.message);
         }
     }
-    handleDeleteUser = async (user) =>{
-        let res = await deleteUserService(user.id);
-        console.log("check delete user", res);
-        if(res && res.errCode === 0){
-            toast.success("Delete user succeed!");
-            await this.props.getAllUser();
-        }
-        else
-        {
-            toast.error(res.message);
-        }
+    handleDeleteUser = async (user) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                let res = await deleteUserService(user.id);
+                if (res && res.errCode === 0) {
+                    toast.success("Delete user succeed!");
+                    await this.props.getAllUser();
+                } else {
+                    toast.error(res.message);
+                }
+            }
+        });
     }
     render() {     
         let arrUser = this.state.listUser || [];

@@ -20,6 +20,7 @@ from django.urls import path
 from django.urls import path
 from be.controllers.UserController import UserListView, UserDetailView, LoginView, AccountView, ForgotPasswordView
 from be.controllers.VocabularyController import VocabularyListCreateView, VocabularyDetailView
+from be.controllers.CategoryController import CategoryListView
 
 urlpatterns = [
     path('api/login/', LoginView.as_view(), name='user-login'),
@@ -29,4 +30,5 @@ urlpatterns = [
     path('api/users/<int:user_id>/', UserDetailView.as_view(), name='user-detail'),  # GET, PUT & DELETE
     path('api/vocs/', VocabularyListCreateView.as_view(), name='voc-list'),          # GET & POST
     path('api/vocs/<int:voc_id>/', VocabularyDetailView.as_view(), name='voc-detail'),  # GET, PUT & DELETE
+    path('api/categories/', CategoryListView.as_view(), name='category-list'),
 ]

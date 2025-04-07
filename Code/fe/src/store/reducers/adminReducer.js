@@ -20,6 +20,28 @@ const adminReducer = (state = initialState, action) => {
             return{
                 ...state,
             }
+        case actionTypes.GET_ALL_VOC_SUCCESS:
+            copyState = {...state};
+            copyState.listVoc = action.data;
+            return{
+                ...copyState,
+            }
+        case actionTypes.GET_ALL_VOC_FAILED:
+            state.listVoc = [];
+            return{
+                ...state,
+            }
+        case actionTypes.GET_ALL_CATEGORY_SUCCESS:
+            copyState = {...state};
+            copyState.listCategory = action.data;
+            return{
+                ...copyState,
+            }
+        case actionTypes.GET_ALL_CATEGORY_FAILED:
+            state.listCategory = [];
+            return{
+                ...state,
+            }
         default:
             return state;
     }

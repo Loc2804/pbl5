@@ -1,0 +1,88 @@
+.body-container{
+    .body-title{
+        margin: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        .btn-add{
+            border-radius: 10px;
+        }
+    }
+    .body-content{
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 50px;
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+          }
+          
+          #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+          }
+          
+          #customers tr:nth-child(even){background-color: #f2f2f2;}
+          
+          #customers tr:hover {background-color: #ddd;}
+          
+          #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #1c6fce;
+            color: white;
+          }
+        
+        .btn-edit{
+            width:30px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: rgb(201, 70, 22);
+        
+            &:hover{
+                background-color: transparent !important;
+                color: orangered !important;
+            }
+        }
+        
+        .btn-delete{
+            width:30px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: rgb(138, 40, 40);
+            &:hover{
+                background-color: transparent !important;
+                color: orangered !important;
+            }
+        }
+        
+        .pagination {
+          margin-top: 20px;
+          display: flex;
+          justify-content: center;
+          list-style-type: none;
+          padding: 0;
+          gap:10px;
+        }
+        
+        .pagination li {
+          margin: 0 5px;
+        }
+        
+        .pagination li a {
+          padding: 10px;
+          border: 1px solid #ddd;
+          color: #007bff;
+          cursor: pointer;
+        }
+        
+        .pagination .active a {
+          background-color: #007bff;
+          color: white;
+          border: 1px solid #007bff;
+        }
+    }
+}

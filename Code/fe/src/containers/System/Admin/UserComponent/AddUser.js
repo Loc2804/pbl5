@@ -106,7 +106,7 @@ class AddUser extends Component {
                 <div className={`add-container ${this.props.isShow ? 'show' : ''}`}>
                     <div className="modal-content">
                         <div className='add-title'>
-                            <h3 className='center'>Add new user</h3>
+                            <h3 className='center'>{this.state.edit ? 'Edit User' : 'Add New User'}</h3>
                             <span className='btn-x' onClick={this.closeModal}>X</span>
                         </div>
                         <div className=' add-body row'>

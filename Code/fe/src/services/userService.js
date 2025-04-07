@@ -30,7 +30,35 @@ const editUserService = (data) =>{
     return axios.put(`/api/users/${data.id}/`, data);
 }
 
+const getAllCategory = () =>{
+    return axios.get(`/api/categories/`);
+}
+
+
+const getAllVocService = () => {
+    return axios.get("/api/vocs/")
+}
+
+
+const getVocById = (inputId) => {
+    return axios.get(`/api/vocs/${inputId}/`)
+}
+
+const createNewVocService = (data) =>{
+    return axios.post('/api/vocs/', data)
+    
+}
+
+const deleteVocService = (vocId) =>{
+    return axios.delete(`/api/vocs/${vocId}/`);
+}
+
+const editVocService = (data) =>{
+    return axios.put(`/api/vocs/${data.id}/`, data);
+}
+
 export {
     handleLoginApi, getAllUserService, createNewUserService, 
-    deleteUserService, editUserService, getUserById,
+    deleteUserService, editUserService, getUserById, getAllCategory,
+    getAllVocService, createNewVocService, deleteVocService, editVocService, getVocById,
 };
