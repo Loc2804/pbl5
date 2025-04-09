@@ -179,7 +179,7 @@ class AddUser extends Component {
                             </div>
 
                             <button className="btn btn-primary btn-submit" onClick={this.handleSubmit}>
-                                {this.props.userEdit ? 'Update' : 'Add'}
+                                {this.state.edit ? 'Update' : 'Add'}
                             </button>
                         </div>
                     </div>

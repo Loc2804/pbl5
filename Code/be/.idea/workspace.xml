@@ -5,24 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d06f703e-9388-482d-b589-a56b239ec6ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/be/controllers/CategoryController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/be/serializers/CategorySerializer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/be/serializers/VocabularyResponseSerializer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/be/services/CategoryService.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CreateAudio.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/controllers/VocabularyController.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/controllers/VocabularyController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/services/VocabularyService.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/services/VocabularyService.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/src/containers/System/Admin/ManageUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/containers/System/Admin/ManageUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/src/containers/System/Admin/ManageVoc.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/containers/System/Admin/ManageVoc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/src/containers/System/Admin/ManageVoc.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/containers/System/Admin/ManageVoc.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/src/containers/System/Admin/UserComponent/AddUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/containers/System/Admin/UserComponent/AddUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/src/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/services/userService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/src/store/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/store/actions/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/src/store/actions/adminAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/store/actions/adminAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/src/store/reducers/adminReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/store/reducers/adminReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/text.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/text.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +39,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Python.CreateAudio.executor&quot;: &quot;Run&quot;,
     &quot;Python.kiemdinhgiathuyet (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.manage.executor&quot;: &quot;Run&quot;,
     &quot;Python.python manage.py makemigrations be.executor&quot;: &quot;Run&quot;,
@@ -122,10 +109,11 @@
       <command value="pip install django-cors-headers" />
       <command value="pip install django-cors-headers " />
       <command value="python manage.py runserver 0.0.0.0:port" />
+      <command value="pip install pydub" />
     </option>
   </component>
   <component name="RunManager" selected="Python.python manage.py runserver">
-    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateAudio" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="be" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -139,7 +127,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CreateAudio.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -267,10 +255,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.python manage.py runserver" />
+        <item itemvalue="Python.CreateAudio" />
         <item itemvalue="Python.python manage.py runserver 0.0.0.0:port" />
         <item itemvalue="Python.python manage.py migrate" />
         <item itemvalue="Python.python manage.py makemigrations be" />
-        <item itemvalue="Python.manage" />
       </list>
     </recent_temporary>
   </component>
@@ -355,6 +343,10 @@
       <workItem from="1744013689951" duration="747000" />
       <workItem from="1744014885017" duration="667000" />
       <workItem from="1744015826166" duration="874000" />
+      <workItem from="1744085749346" duration="1426000" />
+      <workItem from="1744118484770" duration="331000" />
+      <workItem from="1744119579794" duration="565000" />
+      <workItem from="1744185433952" duration="1434000" />
     </task>
     <servers />
   </component>
@@ -365,11 +357,12 @@
     <SUITE FILE_PATH="coverage/be$runModel.coverage" NAME="runModel Coverage Results" MODIFIED="1740015430140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$testAI.coverage" NAME="testAI Coverage Results" MODIFIED="1739780143779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$python_manage_py_makemigrations_be.coverage" NAME="python manage.py makemigrations be Coverage Results" MODIFIED="1743673579792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/be$python_manage_py_runserver.coverage" NAME="python manage.py runserver Coverage Results" MODIFIED="1744015828012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/be$python_manage_py_runserver.coverage" NAME="python manage.py runserver Coverage Results" MODIFIED="1744185435978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$views.coverage" NAME="views Coverage Results" MODIFIED="1739930390263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$python_manage_py_runserver_0_0_0_0_port.coverage" NAME="python manage.py runserver 0.0.0.0:port Coverage Results" MODIFIED="1743756921820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$python_manage_py_makemigrations.coverage" NAME="python manage.py makemigrations Coverage Results" MODIFIED="1743178624531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$python_manage_py_migrate.coverage" NAME="python manage.py migrate Coverage Results" MODIFIED="1743673592057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/be$CreateAudio.coverage" NAME="CreateAudio Coverage Results" MODIFIED="1744086441568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$manage.coverage" NAME="manage Coverage Results" MODIFIED="1743324947852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$kiemdinhgiathuyet__1_.coverage" NAME="kiemdinhgiathuyet (1) Coverage Results" MODIFIED="1739924927938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$python_manage_py_showmigrations.coverage" NAME="python manage.py showmigrations Coverage Results" MODIFIED="1743178750501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
