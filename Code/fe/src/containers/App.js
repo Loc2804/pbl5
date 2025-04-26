@@ -19,7 +19,12 @@ import SignIn from './System/User/UserAccount/SignIn.js';
 import ForgotPassword  from './System/User/UserAccount/ForgotPassword.js';
 import SignUp  from './System/User/UserAccount/SignUp.js';
 import ManageUser from './System/Admin/ManageUser.js';
-
+import HomePage from './HomePage/App/HomePage.js';
+import CameraLearning from './HomePage/App/CameraLearning.js';
+import Learning from './HomePage/App/Learning.js';
+import Review from './HomePage/App/Review.js';
+import Test from './HomePage/App/Test.js';
+import Speaking from './HomePage/App/Speaking.js';
 class App extends Component {
 
     handlePersistorState = () => {
@@ -64,6 +69,13 @@ class App extends Component {
                                 <Route path={path.SIGNIN} exact component={(SignIn)} />
                                 <Route path={path.REGIST} exact component={(SignUp)} />
                                 <Route path={path.FORGOT} exact component={(ForgotPassword)} />
+
+                                <Route path={path.HOMEPAGE} exact component={(HomePage)} />
+                                <Route path={path.CAMERA} exact component={(CameraLearning)} />
+                                <Route path={path.LEARNING} exact component={(Learning)} />
+                                <Route path={path.REVIEW} exact component={(Review)} />
+                                <Route path={path.TEST} exact component={(Test)} />
+                                <Route path={path.SPEAKING} exact component={(Speaking)} />
                             </Switch>  
                             </CustomScrollbars>
                         </div>

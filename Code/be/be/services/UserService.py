@@ -94,15 +94,16 @@ from django.contrib.auth import authenticate
 def login_user(username, password):
     user = User.objects.filter(username=username).first()
     if not user:
-        raise ValidationError("Invalid username or password.")
+        return {"errCode":1,"error":"Invalid username or password."}
 
     if not user.check_password(password):  # Kiểm tra mật khẩu đã hash
-        raise ValidationError("Invalid username or password.")
+        return {"errCode":1,"error":"Wrong password!"}
 
     return {
+        "errCode": 0,
         "id": user.id,
         "username": user.username,
-        "fullname": user.full_name,
+        "full_name": user.full_name,
         "phone": user.phone,
         "address": user.address,
         "role": user.role

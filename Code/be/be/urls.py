@@ -16,11 +16,16 @@ Including another URLconf
 """
 # from django.contrib import admin
 from django.urls import path
-
+import os
 from django.urls import path
 from be.controllers.UserController import UserListView, UserDetailView, LoginView, AccountView, ForgotPasswordView
-from be.controllers.VocabularyController import VocabularyListCreateView, VocabularyDetailView
+from be.controllers.VocabularyController import VocabularyListCreateView, VocabularyDetailView, PronunciationCheckView
 from be.controllers.CategoryController import CategoryListView
+from be.controllers.TestController import SubmitTestView, UpdateStudyProgressView
+from django.conf import settings
+from django.conf.urls.static import static
+
+from be.settings import BASE_DIR
 
 urlpatterns = [
     path('api/login/', LoginView.as_view(), name='user-login'),
@@ -31,4 +36,11 @@ urlpatterns = [
     path('api/vocs/', VocabularyListCreateView.as_view(), name='voc-list'),          # GET & POST
     path('api/vocs/<int:voc_id>/', VocabularyDetailView.as_view(), name='voc-detail'),  # GET, PUT & DELETE
     path('api/categories/', CategoryListView.as_view(), name='category-list'),
+    path('api/speaking/', PronunciationCheckView.as_view(), name='check_pronunciation'),
+    path('api/test_result/', SubmitTestView.as_view(), name='submit-test'),
+    path('api/update_progress/', UpdateStudyProgressView.as_view(), name='update-progress'),
+    path('api/learned_voc/<int:user_id>/', UpdateStudyProgressView.as_view(), name='get-list-learned-voc'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

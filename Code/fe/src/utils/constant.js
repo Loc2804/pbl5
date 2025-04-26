@@ -12,6 +12,13 @@ export const path = {
     REGIST:'/pages/regist',
     SIGNIN:'/pages/logon',
     FORGOT:'/pages/forgot-password',
+
+    HOMEPAGE:'/app/home',
+    CAMERA:'/app/camera',
+    LEARNING:'/app/learning',
+    REVIEW:'/app/review',
+    TEST:'/app/test',
+    SPEAKING:'/app/speaking',
 };
 
 export const LANGUAGES = {

@@ -1,0 +1,127 @@
+//header
+.app-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    z-index: 1000;
+    position: relative;
+    height: 100px;
+    .logo {
+        font-size: 20px;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .account-section {
+        display: flex;
+        align-items: center;
+    }
+
+    .auth-buttons {
+        .btn {
+            padding: 6px 18px;
+            font-size: 0.95rem;
+        }
+    }
+    .nav-links .nav-link {
+        font-weight: 500;
+        padding: 6px 12px;
+        transition: color 0.2s ease;
+        font-size: 17px;
+        &:hover {
+            background-color: #ffffff;
+            color: #007bff !important;
+        }
+    }
+    
+    
+    .user-area {
+        cursor: pointer;
+
+        .dropdown-menu-custom {
+            position: absolute;
+            right: 0;
+            top: 120%;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            width: 180px;
+
+            .dropdown-item {
+                padding: 6px 0;
+                color: #333;
+                font-size: 0.9rem;
+                cursor: pointer;
+
+                &:hover {
+                    color: #007bff;
+                }
+            }
+        }
+    }
+}
+
+
+//footer.scss
+.app-footer {
+    border-top: 1px solid #ddd;
+    background-color: #f8f9fa;
+    color: #343a40;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    .footer-link {
+        color: #343a40;
+        text-decoration: none;
+        &:hover {
+            color: #0d6efd;
+        }
+    }
+
+    .footer-social-icon {
+        color: #343a40;
+        font-size: 1.25rem;
+        transition: color 0.3s ease;
+        &:hover {
+            color: #0d6efd;
+        }
+    }
+}
+
+//menu
+.sidebar-menu {
+    width: 220px;
+    height: 100%;
+    position: absolute;
+    top: 100;
+    left: 0;
+    background-color: #f8f9fa;
+    border-right: 1px solid #dee2e6;
+    z-index: 100;
+    
+    .sidebar-menu .menu-item a.fw-bold {
+        background-color: #e9f3ff;
+        border-radius: 8px;
+        padding: 8px;
+    }    
+    .menu-list {
+        padding-top: 1rem;
+
+        .menu-item {
+            a {
+                font-size: 16px;
+                padding: 10px 8px;
+                display: block;
+                border-radius: 8px;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: #e2e6ea;
+                    color: #0d6efd;
+                }
+            }
+        }
+    }
+}

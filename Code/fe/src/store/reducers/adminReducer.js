@@ -4,6 +4,7 @@ const initialState = {
     listUser:[],
     listVoc:[],
     listCategory:[],
+    learnedListVoc:[],
 }
 
 const adminReducer = (state = initialState, action) => {
@@ -28,6 +29,17 @@ const adminReducer = (state = initialState, action) => {
             }
         case actionTypes.GET_ALL_VOC_FAILED:
             state.listVoc = [];
+            return{
+                ...state,
+            }
+        case actionTypes.GET_ALL_LEARNED_VOC_SUCCESS:
+            copyState = {...state};
+            copyState.learnedListVoc = action.data;
+            return{
+                ...copyState,
+            }
+        case actionTypes.GET_ALL_LEARNED_VOC_FAILED:
+            state.learnedListVoc = [];
             return{
                 ...state,
             }

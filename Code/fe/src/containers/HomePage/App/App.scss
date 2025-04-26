@@ -1,0 +1,126 @@
+//homepage
+.homepage-container {
+    margin-left: 250px;
+    display: flex;
+}
+
+.main-content {
+    background-color: #ffffff;
+}
+
+.intro-images img {
+    transition: transform 0.3s ease;
+}
+
+.intro-images img:hover {
+    transform: scale(1.03);
+}
+.intro-images .img img {
+    height: 400px;
+    width: 400px;
+    object-fit: contain;
+}
+
+.title-app{
+    font-size: 30px;
+}
+
+.des-app{
+    font-size: 25px;
+    color: #6c757d;
+}
+
+//speaking
+.speaking-container {
+    margin-left: 250px;
+    display: flex;
+    min-height: 90vh;
+    flex-direction: column;
+    .main-content{
+        min-height: 30vh;
+        .select-sentence{
+            width: 50%;
+        }
+    }
+}
+
+
+//test
+.test-container{
+    margin-top: 50px;
+    margin-left: 250px;
+    display: flex;
+    min-height: 90vh;
+    flex-direction: column;
+    .main-content{
+        min-height: 30vh;
+        .test-select{
+            width: 50%;
+        }
+        .lb-test{
+            font-size: 18px;
+        }
+        .btn-test{
+            margin-top: 20px;
+            width: 200px;
+            height: 50px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            &:hover{
+                background-color: #0056b3;
+            }
+        }
+    }
+    .test-question{
+        .text-voc{
+            font-size: 20px;
+        }
+        .form-voc{
+            margin-top: 20px;
+            width: 50%;
+        }
+        .btn-voc{
+            width: 100px;
+        }
+    }
+}
+
+//learning
+.progress-container {
+    width: 70%; /* Chiếm 70% chiều rộng màn hình */
+    margin-top: 20px;
+    height: 20px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    position: relative;
+}
+
+.progress-background {
+    background-color: #d3d7db; /* màu xám nhạt cho phần chưa học */
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 8px;
+
+    .progress-bar {
+        height: 100%;
+        background-color: #99bae5; /* màu xanh đậm cho phần đã học */
+        border-radius: 10px;
+        transition: width 0.4s ease; /* thêm hiệu ứng mượt */
+    }
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #130c0a;
+    font-weight: bold;
+}

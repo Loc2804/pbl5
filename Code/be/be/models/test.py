@@ -1,6 +1,7 @@
 # models/test.py
 from django.db import models
 from .user import User
+from django.contrib.auth import get_user_model
 
 class Test(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='tests')

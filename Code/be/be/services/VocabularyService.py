@@ -2,6 +2,10 @@ from be.models import Category
 from be.models.vocabulary import Vocabulary
 from be.serializers.VocabularyResponseSerializer import VocabularyResponseSerializer
 from be.serializers.VocabularySerializer import VocabularySerializer
+import librosa
+import numpy as np
+import speech_recognition as sr
+from difflib import SequenceMatcher
 
 class VocabularyService:
     @staticmethod
@@ -93,3 +97,61 @@ class VocabularyService:
             vocab.delete()
             return {"errCode": 0, "message": "Vocabulary deleted successfully"}, None
         return None, {"errCode": 2, "message": "Vocabulary not found"}
+
+    @staticmethod
+    def check_pronunciation_from_text(user_audio_path, expected_text):
+        recognized_text = VocabularyService._transcribe_audio(user_audio_path)
+
+        if recognized_text in ["Không nhận diện được giọng nói", "Lỗi kết nối đến API nhận diện giọng nói"]:
+            return {"errCode": 1, "message": recognized_text}
+
+        errors = VocabularyService._compare_words(expected_text, recognized_text)
+
+        if not errors:
+            return {"errCode": 0, "message": "Người dùng đã phát âm đúng"}
+        else:
+            wrong_words = ', '.join(sum(errors, []))
+            return {"errCode": 1, "message": f"Người dùng phát âm sai các từ: {wrong_words}"}
+
+
+    @staticmethod
+    def _transcribe_audio(user_audio_path):
+        recognizer = sr.Recognizer()
+        try:
+            # Kiểm tra nếu file audio không tồn tại hoặc không hợp lệ
+            with sr.AudioFile(user_audio_path) as source:
+                audio = recognizer.record(source)  # Đọc toàn bộ file audio
+                recognized_text = recognizer.recognize_google(audio, language='en-EN')  # Nhận diện giọng nói
+                return recognized_text
+
+        except FileNotFoundError:
+            print(f"Lỗi: Không tìm thấy file {user_audio_path}")
+            return "File không tồn tại"
+
+        except sr.UnknownValueError:
+            # Lỗi khi Google không thể nhận diện âm thanh
+            print("Lỗi nhận diện giọng nói: Không thể hiểu nội dung")
+            return "Không nhận diện được giọng nói"
+
+        except sr.RequestError as e:
+            # Lỗi khi không thể kết nối tới Google API
+            print(f"Lỗi kết nối API Google: {str(e)}")
+            return "Lỗi kết nối đến API nhận diện giọng nói"
+
+        except Exception as e:
+            # Lỗi bất kỳ khác
+            print(f"Lỗi transcribe: {str(e)}")  # Log lỗi chi tiết
+            return f"Lỗi nhận diện giọng nói: {str(e)}"
+
+    @staticmethod
+    def _compare_words(reference, user_speech):
+        ref_words = reference.lower().split()
+        user_words = user_speech.lower().split()
+
+        word_mapping = SequenceMatcher(None, ref_words, user_words).get_opcodes()
+        errors = []
+
+        for tag, i1, i2, j1, j2 in word_mapping:
+            if tag != "equal":
+                errors.append(ref_words[i1:i2])
+        return errors

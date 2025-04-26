@@ -1,3 +1,5 @@
+import traceback
+
 from rest_framework import views, status
 from rest_framework.response import Response
 
@@ -5,7 +7,10 @@ from be.serializers.UserResponseSerializer import UserResponseSerializer
 from be.services.VocabularyService import VocabularyService
 from be.serializers.VocabularySerializer import VocabularySerializer
 from be.serializers.VocabularyResponseSerializer import VocabularyResponseSerializer
-
+from rest_framework.parsers import MultiPartParser, FormParser
+from pydub import AudioSegment
+import os
+import tempfile
 class VocabularyListCreateView(views.APIView):
     def get(self, request):
         vocabulary = VocabularyService.get_all_vocabularies()
@@ -49,3 +54,50 @@ class VocabularyDetailView(views.APIView):
         if errors:
             return Response(errors, status=200)
         return Response(success, status=200)
+
+
+class PronunciationCheckView(views.APIView):
+    parser_classes = [MultiPartParser, FormParser]
+
+    def post(self, request):
+        try:
+            audio_file = request.FILES.get('audio')
+            expected_text = request.data.get('text')
+
+            if not audio_file or not expected_text:
+                return Response({
+                    "errCode": 1,
+                    "message": "Thiếu file audio hoặc văn bản chuẩn"
+                }, status=400)
+
+            # Kiểm tra định dạng file
+            if not audio_file.name.lower().endswith('.wav'):
+                return Response({
+                    "errCode": 2,
+                    "message": "Chỉ chấp nhận file WAV"
+                }, status=400)
+
+            # Lưu file WAV gốc (không cần convert)
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_audio:
+                for chunk in audio_file.chunks():
+                    temp_audio.write(chunk)
+                temp_audio_path = temp_audio.name
+
+            os.system(f"start {temp_audio_path}")
+            # Gọi xử lý phát âm trực tiếp với file WAV
+            result = VocabularyService.check_pronunciation_from_text(
+                user_audio_path=temp_audio_path,
+                expected_text=expected_text
+            )
+
+            # Dọn file tạm
+            os.remove(temp_audio_path)
+
+            return Response(result, status=200)
+
+        except Exception as e:
+            traceback.print_exc()
+            return Response({
+                "errCode": 3,
+                "message": f"Lỗi hệ thống: {str(e)}"
+            }, status=500)

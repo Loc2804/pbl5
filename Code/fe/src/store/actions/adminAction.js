@@ -1,5 +1,5 @@
 import actionTypes from './actionTypes';
-import { getAllCategory, getAllUserService, getAllVocService} from '../../services/userService';
+import { getAllCategory, getAllUserService, getAllVocService, getListUserVoc} from '../../services/userService';
 import { toast } from 'react-toastify';
 // import { types } from 'node-sass';
 
@@ -87,4 +87,32 @@ export const getAllVocSuccess = (data) => ({
 
 export const getAllVocFailed = () => ({
     type: actionTypes.GET_ALL_VOC_FAILED,
+})
+
+export const getAllLearnedVocStart = (id) => {
+    return async(dispatch, getState) =>{
+        try {
+            let res = await getListUserVoc(id);
+            if(res && res.errCode === 0){
+                dispatch(getAllLearnedVocSuccess(res.data));
+            }
+            else{
+                toast.error("Error from server !");
+                dispatch(getAllLearnedVocFailed());
+            }
+        } catch (error) {
+            toast.error("Error from server-2 !");
+            dispatch(getAllLearnedVocFailed());
+            console.log("Error from server: ",error);
+        }
+    }
+}
+
+export const getAllLearnedVocSuccess = (data) => ({
+    type: actionTypes.GET_ALL_LEARNED_VOC_SUCCESS,
+    data:data,
+})
+
+export const getAllLearnedVocFailed = () => ({
+    type: actionTypes.GET_ALL_LEARNED_VOC_FAILED,
 })

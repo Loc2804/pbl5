@@ -2,8 +2,8 @@ import { stringify } from "react-auth-wrapper/helpers";
 import axios from "../axios"
 
 const handleLoginApi = (userEmail,userPassword) =>{
-    return axios.post('/api/login', {
-        email:userEmail,
+    return axios.post('/api/login/', {
+        username:userEmail,
         password: userPassword
     } );
 }
@@ -45,8 +45,7 @@ const getVocById = (inputId) => {
 }
 
 const createNewVocService = (data) =>{
-    return axios.post('/api/vocs/', data)
-    
+    return axios.post('/api/vocs/', data)  
 }
 
 const deleteVocService = (vocId) =>{
@@ -57,8 +56,24 @@ const editVocService = (data) =>{
     return axios.put(`/api/vocs/${data.id}/`, data);
 }
 
+const speakingTest = (data) =>{
+    return axios.post('/api/speaking/', data)
+}
+
+const saveUserResult = (data) =>{
+    return axios.post('/api/test_result/', data)
+}
+
+const updateProgress = (data) =>{
+    return axios.post('/api/update_progress/', data)
+}
+
+const getListUserVoc = (user_id) =>{
+    return axios.get(`/api/learned_voc/${user_id}/`)
+}
 export {
     handleLoginApi, getAllUserService, createNewUserService, 
     deleteUserService, editUserService, getUserById, getAllCategory,
     getAllVocService, createNewVocService, deleteVocService, editVocService, getVocById,
+    speakingTest,saveUserResult,updateProgress,getListUserVoc
 };

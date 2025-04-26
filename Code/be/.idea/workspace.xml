@@ -5,10 +5,102 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d06f703e-9388-482d-b589-a56b239ec6ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CreateAudio.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/be/controllers/TestController.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/be/serializers/TestSerializer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/be/services/TestService.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Audio/text.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Image/text.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Apple.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Banana.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Beetroot.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Bell_Pepper.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Cabbage.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Capsicum.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Carrot.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Cauliflower.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Chilli_Pepper.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Corn.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Cucumber.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Durian.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Eggplant.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Garlic.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Ginger.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Grapes.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Jalapeno.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Kiwi.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Lemon.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Lettuce.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Mango.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Onion.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Orange.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Paprika.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Pear.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Peas.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Pineapple.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Pomegranate.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Potato.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Radish.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Soy_Beans.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Spinach.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Sweetcorn.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Sweetpotato.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Tomato.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Turnip.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio/Watermelon.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Apple.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Banana.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Beetroot.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Bell_Pepper.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Cabbage.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Capsicum.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Carrot.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Cauliflower.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Chilli_Pepper.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Corn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Cucumber.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Durian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Eggplant.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Garlic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Ginger.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Grapes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Jalapeno.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Kiwi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Lemon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Lettuce.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Mango.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Onion.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Orange.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Paprika.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Pear.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Peas.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Pineapple.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Pomegranate.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Potato.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Radish.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Soy_Beans.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Spinach.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Sweetcorn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Sweetpotato.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Tomato.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Turnip.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Watermelon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/controllers/UserController.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/controllers/UserController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/controllers/VocabularyController.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/controllers/VocabularyController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/models/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/models/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/services/UserService.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/services/UserService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/services/VocabularyService.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/services/VocabularyService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/containers/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/containers/System/User/UserAccount/ForgotPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/containers/System/User/UserAccount/ForgotPassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/containers/System/User/UserAccount/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/containers/System/User/UserAccount/SignIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/services/userService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/store/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/store/actions/actionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/store/actions/adminAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/store/actions/adminAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/store/actions/userActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/store/actions/userActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/store/reducers/adminReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/store/reducers/adminReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/utils/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/utils/constant.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,12 +188,10 @@
       <command value="pip uninstall tensorflow" />
       <command value="pip install silence_tensorflow" />
       <command value="python manage.py makemigrations " />
-      <command value="python manage.py makemigrations" />
       <command value="pip install djangorestframework" />
       <command value="pip install djangorestframework " />
       <command value="pip install mysqlclient" />
       <command value="pip install mysqlclient " />
-      <command value="python manage.py migrate" />
       <command value="python manage.py showmigrations " />
       <command value="python manage.py makemigrations be " />
       <command value="python manage.py migrate " />
@@ -110,6 +200,9 @@
       <command value="pip install django-cors-headers " />
       <command value="python manage.py runserver 0.0.0.0:port" />
       <command value="pip install pydub" />
+      <command value="pip install ffmpeg-python" />
+      <command value="python manage.py makemigrations" />
+      <command value="python manage.py migrate" />
     </option>
   </component>
   <component name="RunManager" selected="Python.python manage.py runserver">
@@ -136,7 +229,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="python manage.py makemigrations be" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="python manage.py makemigrations" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="be" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -151,7 +244,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="manage.py" />
-      <option name="PARAMETERS" value="makemigrations be" />
+      <option name="PARAMETERS" value="makemigrations" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -255,10 +348,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.python manage.py runserver" />
+        <item itemvalue="Python.python manage.py migrate" />
+        <item itemvalue="Python.python manage.py makemigrations" />
         <item itemvalue="Python.CreateAudio" />
         <item itemvalue="Python.python manage.py runserver 0.0.0.0:port" />
-        <item itemvalue="Python.python manage.py migrate" />
-        <item itemvalue="Python.python manage.py makemigrations be" />
       </list>
     </recent_temporary>
   </component>
@@ -347,22 +440,58 @@
       <workItem from="1744118484770" duration="331000" />
       <workItem from="1744119579794" duration="565000" />
       <workItem from="1744185433952" duration="1434000" />
+      <workItem from="1744536455327" duration="16000" />
+      <workItem from="1745301666591" duration="3144000" />
+      <workItem from="1745399451989" duration="16000" />
+      <workItem from="1745399508597" duration="1180000" />
+      <workItem from="1745401461206" duration="1574000" />
+      <workItem from="1745426532595" duration="184000" />
+      <workItem from="1745426855514" duration="404000" />
+      <workItem from="1745427590693" duration="1236000" />
+      <workItem from="1745456245087" duration="490000" />
+      <workItem from="1745457616798" duration="1366000" />
+      <workItem from="1745459874639" duration="295000" />
+      <workItem from="1745487374380" duration="1164000" />
+      <workItem from="1745489091905" duration="1172000" />
+      <workItem from="1745517197543" duration="1049000" />
+      <workItem from="1745570446113" duration="404000" />
+      <workItem from="1745598167274" duration="614000" />
+      <workItem from="1745599129163" duration="2608000" />
+      <workItem from="1745646173127" duration="402000" />
+      <workItem from="1745658138238" duration="674000" />
+      <workItem from="1745659114062" duration="2390000" />
+      <workItem from="1745671180158" duration="1388000" />
+      <workItem from="1745691130303" duration="921000" />
+      <workItem from="1745692165653" duration="361000" />
+      <workItem from="1745692691827" duration="697000" />
+      <workItem from="1745694778261" duration="1158000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/be$runModel.coverage" NAME="runModel Coverage Results" MODIFIED="1740015430140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$testAI.coverage" NAME="testAI Coverage Results" MODIFIED="1739780143779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$python_manage_py_makemigrations_be.coverage" NAME="python manage.py makemigrations be Coverage Results" MODIFIED="1743673579792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/be$python_manage_py_runserver.coverage" NAME="python manage.py runserver Coverage Results" MODIFIED="1744185435978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/be$python_manage_py_runserver.coverage" NAME="python manage.py runserver Coverage Results" MODIFIED="1745694779809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$views.coverage" NAME="views Coverage Results" MODIFIED="1739930390263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$python_manage_py_runserver_0_0_0_0_port.coverage" NAME="python manage.py runserver 0.0.0.0:port Coverage Results" MODIFIED="1743756921820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/be$python_manage_py_makemigrations.coverage" NAME="python manage.py makemigrations Coverage Results" MODIFIED="1743178624531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/be$python_manage_py_migrate.coverage" NAME="python manage.py migrate Coverage Results" MODIFIED="1743673592057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/be$python_manage_py_makemigrations.coverage" NAME="python manage.py makemigrations Coverage Results" MODIFIED="1745601765756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$CreateAudio.coverage" NAME="CreateAudio Coverage Results" MODIFIED="1744086441568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/be$python_manage_py_migrate.coverage" NAME="python manage.py migrate Coverage Results" MODIFIED="1745601780989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$manage.coverage" NAME="manage Coverage Results" MODIFIED="1743324947852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$kiemdinhgiathuyet__1_.coverage" NAME="kiemdinhgiathuyet (1) Coverage Results" MODIFIED="1739924927938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$python_manage_py_showmigrations.coverage" NAME="python manage.py showmigrations Coverage Results" MODIFIED="1743178750501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

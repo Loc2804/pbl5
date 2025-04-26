@@ -55,15 +55,20 @@ class LoginView(views.APIView):
         password = request.data.get("password")
 
         if not username or not password:
-            return Response({"error": "Username and password are required."}, status=status.HTTP_200_OK)  # Changed to 200 OK
+            return Response({
+                "errCode": 1,
+                "error": "Username and password are required."
+            }, status=status.HTTP_200_OK)
 
-        # Xác thực người dùng thay vì kiểm tra dữ liệu đầu vào bằng serializer
+        # Xác thực người dùng
         user_data = login_user(username, password)
-        print(user_data)
-        if user_data:
-            return Response(UserResponseSerializer(user_data).data, status=status.HTTP_200_OK)
+        if user_data.get("errCode") == 0:
+            return Response({
+                "errCode": 0,
+                "data": UserResponseSerializer(user_data).data
+            }, status=status.HTTP_200_OK)
 
-        return Response({"error": "Invalid username or password."}, status=status.HTTP_200_OK)  # Changed to 200 OK
+        return Response(user_data, status=status.HTTP_200_OK)  # Changed to 200 OK
 
 class AccountView(views.APIView):
     def post(self, request):
