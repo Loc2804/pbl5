@@ -71,9 +71,14 @@ const updateProgress = (data) =>{
 const getListUserVoc = (user_id) =>{
     return axios.get(`/api/learned_voc/${user_id}/`)
 }
+
+const getPredictionImage = (data) =>{
+    return axios.post(`/api/predict/`,data)
+}
+
 export {
     handleLoginApi, getAllUserService, createNewUserService, 
     deleteUserService, editUserService, getUserById, getAllCategory,
     getAllVocService, createNewVocService, deleteVocService, editVocService, getVocById,
-    speakingTest,saveUserResult,updateProgress,getListUserVoc
+    speakingTest,saveUserResult,updateProgress,getListUserVoc,getPredictionImage
 };
