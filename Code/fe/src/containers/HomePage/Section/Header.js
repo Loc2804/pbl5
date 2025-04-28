@@ -56,8 +56,8 @@ class Header extends Component {
                                 {showMenu && (
                                     <div className="dropdown-menu-custom">
                                         <p className="mb-2 fw-semibold">Xin chào, {userInfo?.full_name || 'User'}</p>
-                                        <Link to="/account" className="dropdown-item">Tài khoản</Link>
-                                        <Link to="/settings" className="dropdown-item">Cài đặt</Link>
+                                        <Link to="/app/account" className="dropdown-item">Tài khoản</Link>
+                                        <Link to="/app/settings" className="dropdown-item">Cài đặt</Link>
                                         <div className="dropdown-item text-danger" onClick={()=>this.logOut()}>
                                             Đăng xuất
                                         </div>

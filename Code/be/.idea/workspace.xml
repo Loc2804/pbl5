@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d06f703e-9388-482d-b589-a56b239ec6ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/be/controllers/PredictionController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/be/services/PredictionService.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/controllers/TestController.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/controllers/TestController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/controllers/VocabularyController.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/controllers/VocabularyController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/services/TestService.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/services/TestService.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/be/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/be/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/src/containers/HomePage/App/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/containers/HomePage/App/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/containers/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../fe/src/containers/HomePage/App/CameraLearning.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/containers/HomePage/App/CameraLearning.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fe/src/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/services/userService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/containers/HomePage/Section/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/containers/HomePage/Section/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fe/src/utils/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fe/src/utils/constant.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -381,6 +383,8 @@
       <workItem from="1745694778261" duration="1158000" />
       <workItem from="1745777365710" duration="2239000" />
       <workItem from="1745781905526" duration="278000" />
+      <workItem from="1745849128546" duration="2224000" />
+      <workItem from="1745856541766" duration="1813000" />
     </task>
     <servers />
   </component>
@@ -402,7 +406,7 @@
     <SUITE FILE_PATH="coverage/be$runModel.coverage" NAME="runModel Coverage Results" MODIFIED="1740015430140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$testAI.coverage" NAME="testAI Coverage Results" MODIFIED="1739780143779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$python_manage_py_makemigrations_be.coverage" NAME="python manage.py makemigrations be Coverage Results" MODIFIED="1743673579792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/be$python_manage_py_runserver.coverage" NAME="python manage.py runserver Coverage Results" MODIFIED="1745782090599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/be$python_manage_py_runserver.coverage" NAME="python manage.py runserver Coverage Results" MODIFIED="1745856678276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$views.coverage" NAME="views Coverage Results" MODIFIED="1739930390263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$python_manage_py_runserver_0_0_0_0_port.coverage" NAME="python manage.py runserver 0.0.0.0:port Coverage Results" MODIFIED="1743756921820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/be$python_manage_py_makemigrations.coverage" NAME="python manage.py makemigrations Coverage Results" MODIFIED="1745601765756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

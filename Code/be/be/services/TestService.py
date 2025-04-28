@@ -54,5 +54,10 @@ class TestService:
         except (User.DoesNotExist, StudyProgress.DoesNotExist):
             return []
 
+    @staticmethod
+    def get_tests_by_user_id(user):
+        tests = Test.objects.filter(user=user)
+        serializer = TestSerializer(tests, many=True)
+        return serializer.data
 
 

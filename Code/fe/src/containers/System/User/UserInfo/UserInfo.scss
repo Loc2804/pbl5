@@ -1,0 +1,107 @@
+.account-container {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    min-height: calc(100vh - 200px); // Trừ Header/Footer
+    
+    .account-content {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+        .account-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .info-item {
+                display: flex;
+                flex-direction: column;
+
+                .label {
+                    font-weight: bold;
+                    color: #666;
+                    font-size: 16px;
+                }
+
+                .value {
+                    margin-top: 5px;
+                    font-size: 18px;
+                    color: #333;
+                    word-break: break-word;
+                }
+            }
+
+            .link-section {
+                margin-top: 30px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                .account-link {
+                    text-decoration: none;
+                    background-color: #007bff;
+                    color: #fff;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    text-align: center;
+                    font-size: 16px;
+                    transition: background-color 0.3s;
+
+                    &:hover {
+                        background-color: #0056b3;
+                    }
+                }
+            }
+        }
+    }
+}
+.history-table {
+    margin-top: 20px;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+    }
+}
+
+.link-section {
+    margin-top: 20px;
+    text-align: center;
+
+    .account-link {
+        text-decoration: none;
+        color: #3498db;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .account-link:hover {
+        text-decoration: underline;
+    }
+}

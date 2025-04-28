@@ -83,7 +83,7 @@ class PronunciationCheckView(views.APIView):
                     temp_audio.write(chunk)
                 temp_audio_path = temp_audio.name
 
-            os.system(f"start {temp_audio_path}")
+            # os.system(f"start {temp_audio_path}")
             # Gọi xử lý phát âm trực tiếp với file WAV
             result = VocabularyService.check_pronunciation_from_text(
                 user_audio_path=temp_audio_path,

@@ -76,9 +76,15 @@ const getPredictionImage = (data) =>{
     return axios.post(`/api/predict/`,data)
 }
 
+const getListHistoryTest = (user_id) =>{
+    return axios.get(`/api/history/${user_id}/`)
+}
+
+
 export {
     handleLoginApi, getAllUserService, createNewUserService, 
     deleteUserService, editUserService, getUserById, getAllCategory,
     getAllVocService, createNewVocService, deleteVocService, editVocService, getVocById,
-    speakingTest,saveUserResult,updateProgress,getListUserVoc,getPredictionImage
+    speakingTest,saveUserResult,updateProgress,getListUserVoc,getPredictionImage,
+    getListHistoryTest
 };

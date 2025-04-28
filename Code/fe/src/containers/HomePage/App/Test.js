@@ -6,6 +6,7 @@ import Menu from '../Section/Menu';
 import Footer from '../Section/Footer';
 import * as actions from "../../../store/actions";
 import { saveUserResult } from '../../../services/userService';
+import { withRouter } from 'react-router-dom'; 
 
 class Test extends Component {
     constructor(props) {
@@ -26,11 +27,19 @@ class Test extends Component {
     }
 
     async componentDidMount() {
+        if (!this.props.userInfo) {
+            this.props.history.push('/app/home');
+            return;
+        }
         this.props.getAllVoc();
         this.props.getAllCategory();
     }
 
     async componentDidUpdate(prevProps, prevState) {
+        if (!this.props.userInfo) {
+            this.props.history.push('/app/home');
+            return;
+        }
         if (this.props.listCategory !== prevProps.listCategory) {
             this.setState({ listCategory: this.props.listCategory });
         }
@@ -224,4 +233,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Test);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Test));

@@ -7,6 +7,7 @@ import Footer from '../Section/Footer';
 import { speakingTest } from '../../../services/userService';
 import * as actions from "../../../store/actions";
 import Recorder from 'recorder-js';
+import { withRouter } from 'react-router-dom';
 
 class Speaking extends Component {
     constructor(props) {
@@ -26,10 +27,18 @@ class Speaking extends Component {
     }
 
     async componentDidMount() {
+        if (!this.props.userInfo) {
+            this.props.history.push('/app/home');
+            return;
+        }
         this.props.getAllVoc();
     }
 
     async componentDidUpdate(prevProps) {
+        if (!this.props.userInfo) {
+            this.props.history.push('/app/home');
+            return;
+        }
         if (this.props.listVoc !== prevProps.listVoc) {
             this.setState({ listVoc: this.props.listVoc });
         }
@@ -207,4 +216,4 @@ const mapDispatchToProps = dispatch => ({
     getAllVoc: () => dispatch(actions.getAllVocStart()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Speaking);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Speaking));

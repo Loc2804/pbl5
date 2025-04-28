@@ -7,6 +7,7 @@ import Footer from '../Section/Footer';
 import * as actions from "../../../store/actions";
 import { updateProgress } from '../../../services/userService';
 import { toast } from 'react-toastify';
+import { withRouter } from 'react-router-dom'; 
 
 class Learning extends Component {
     constructor(props) {
@@ -22,11 +23,19 @@ class Learning extends Component {
     }
 
     async componentDidMount() {
+        if (!this.props.userInfo) {
+            this.props.history.push('/app/home');
+            return;
+        }
         this.props.getAllVoc();
         this.props.getAllLearnedVoc(this.props.userInfo.id);
     }
 
     async componentDidUpdate(prevProps,prevState) {
+        if (!this.props.userInfo) {
+            this.props.history.push('/app/home');
+            return;
+        }
         if (prevProps.listVoc !== this.props.listVoc) {
             if (this.props.listVoc && this.props.listVoc.length > 0) {
                 const learnedVocIds = this.props.learnedListVoc;
@@ -215,4 +224,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Learning);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Learning));

@@ -4,6 +4,7 @@ import Header from '../Section/Header';
 import Menu from '../Section/Menu';
 import Footer from '../Section/Footer';
 import { getPredictionImage } from '../../../services/userService';
+import { withRouter } from 'react-router-dom';
 
 class CameraLearning extends Component {
     constructor(props) {
@@ -18,6 +19,19 @@ class CameraLearning extends Component {
         this.captureInterval = null;
     }
 
+    async componentDidMount() {
+        if (!this.props.userInfo) {
+            this.props.history.push('/app/home');
+            return;
+        }
+    }
+
+    async componentDidUpdate(prevProps, prevState) {
+        if (!this.props.userInfo) {
+            this.props.history.push('/app/home');
+            return;
+        }
+    }
     startCamera = async () => {
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             try {
@@ -122,13 +136,16 @@ class CameraLearning extends Component {
                                 textShadow: '2px 2px 5px rgba(0,0,0,0.7)',
                             }}>
                                 {this.state.label ? (
-                                    <h2 style={{ color: 'green' }}>
+                                    <h2 style={{ color: '#fff' }}>
                                         {this.state.label} <br />
                                         (Độ tin cậy: {(this.state.confidence * 100).toFixed(2)}%)
                                     </h2>
-                                ) : (
-                                    <h3 style={{ color: '#fff' }}>Đang nhận diện...</h3>
-                                )}
+                                ) : 
+                                    <div>
+                                        {!this.state.isCameraOn ? <h3 style={{ color: 'black' }}>Đang nhận diện...</h3> : <h3 style={{ color: '#fff' }}>Đang nhận diện...</h3>}                                     
+                                    </div>
+                                    
+                                }
                             </div>
     
                             <canvas ref={this.canvasRef} width="224" height="224" style={{ display: 'none' }}></canvas>
@@ -162,4 +179,4 @@ const mapStateToProps = state => ({
     userInfo: state.user.userInfo,
 });
 
-export default connect(mapStateToProps)(CameraLearning);
+export default withRouter(connect(mapStateToProps)(CameraLearning));

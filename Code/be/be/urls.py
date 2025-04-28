@@ -21,7 +21,7 @@ from django.urls import path
 from be.controllers.UserController import UserListView, UserDetailView, LoginView, AccountView, ForgotPasswordView
 from be.controllers.VocabularyController import VocabularyListCreateView, VocabularyDetailView, PronunciationCheckView
 from be.controllers.CategoryController import CategoryListView
-from be.controllers.TestController import SubmitTestView, UpdateStudyProgressView
+from be.controllers.TestController import SubmitTestView, UpdateStudyProgressView, UserTestHistoryView
 from be.controllers.PredictionController import PredictView
 from django.conf import settings
 from django.conf.urls.static import static
@@ -42,6 +42,8 @@ urlpatterns = [
     path('api/update_progress/', UpdateStudyProgressView.as_view(), name='update-progress'),
     path('api/learned_voc/<int:user_id>/', UpdateStudyProgressView.as_view(), name='get-list-learned-voc'),
     path('api/predict/', PredictView.as_view(), name='predict'),
+    path('api/history/<int:user_id>/', UserTestHistoryView.as_view(), name='user-test-history'),
+
 ]
 
 if settings.DEBUG:

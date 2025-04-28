@@ -19,6 +19,9 @@ export const path = {
     REVIEW:'/app/review',
     TEST:'/app/test',
     SPEAKING:'/app/speaking',
+
+    ACCOUNT: '/app/account',
+    HISTORY:'/app/history',
 };
 
 export const LANGUAGES = {

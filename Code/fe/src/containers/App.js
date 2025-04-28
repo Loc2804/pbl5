@@ -25,6 +25,8 @@ import Learning from './HomePage/App/Learning.js';
 import Review from './HomePage/App/Review.js';
 import Test from './HomePage/App/Test.js';
 import Speaking from './HomePage/App/Speaking.js';
+import AccountUser from './System/User/UserInfo/AccountUser.js';
+import TestHistory from './System/User/UserInfo/TestHistory.js';
 class App extends Component {
 
     handlePersistorState = () => {
@@ -76,6 +78,10 @@ class App extends Component {
                                 <Route path={path.REVIEW} exact component={(Review)} />
                                 <Route path={path.TEST} exact component={(Test)} />
                                 <Route path={path.SPEAKING} exact component={(Speaking)} />
+
+                                <Route path={path.ACCOUNT} exact component={(AccountUser)} />   
+                                <Route path={path.HISTORY} exact component={(TestHistory)} />  
+
                             </Switch>  
                             </CustomScrollbars>
                         </div>

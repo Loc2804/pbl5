@@ -4,11 +4,18 @@ from rest_framework.response import Response
 from rest_framework import status
 from be.services.TestService import TestService
 from be.models.user import User
+from be.serializers.TestSerializer import TestSerializer
 class SubmitTestView(APIView):
     def post(self, request):
         data = TestService.create_test(request.data)
         return Response(status=200)
 
+class UserTestHistoryView(APIView):
+    def get(self, request, user_id):
+        user = User.objects.get(id=user_id)
+        tests = TestService.get_tests_by_user_id(user)
+
+        return Response({"data":tests,"errCode":0}, status=status.HTTP_200_OK)
 class UpdateStudyProgressView(APIView):
     def post(self,request):
         vocab_id = request.data.get('vocab_id')
