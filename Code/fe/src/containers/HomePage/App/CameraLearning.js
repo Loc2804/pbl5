@@ -142,7 +142,7 @@ class CameraLearning extends Component {
                                     </h2>
                                 ) : 
                                     <div>
-                                        {!this.state.isCameraOn ? <h3 style={{ color: 'black' }}>Đang nhận diện...</h3> : <h3 style={{ color: '#fff' }}>Đang nhận diện...</h3>}                                     
+                                        {!this.state.isCameraOn ? <h3 style={{ color: 'red' }}>Hãy mở Camera...</h3> : <h3 style={{ color: '#fff' }}>Đang nhận diện...</h3>}                                     
                                     </div>
                                     
                                 }

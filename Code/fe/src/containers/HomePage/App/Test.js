@@ -59,16 +59,25 @@ class Test extends Component {
 
     handleSubmitTest = () => {
         const { valueTest, listVoc } = this.state;
-
+    
         let filteredList = [];
         if (valueTest === "entire") {
-            filteredList = listVoc;
+            filteredList = [...listVoc];
         } else {
             filteredList = listVoc.filter(item => item.category.category_value === valueTest);
         }
-
+    
+        // Shuffle the filteredList using Fisher-Yates
+        for (let i = filteredList.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [filteredList[i], filteredList[j]] = [filteredList[j], filteredList[i]];
+        }
+    
+        // Giới hạn số lượng câu hỏi nếu cần (ví dụ: 10 câu)
+        const limitedList = filteredList.slice(0, 10);
+    
         this.setState({
-            currentVocList: filteredList,
+            currentVocList: limitedList,
             currentQuestionIndex: 0,
             userAnswer: '',
             feedback: '',
@@ -77,6 +86,7 @@ class Test extends Component {
             isTestFinished: false,
         });
     }
+    
 
     handleAnswerSubmit = () => {
         const { userAnswer, currentVocList, currentQuestionIndex, correctAnswers } = this.state;
@@ -102,7 +112,7 @@ class Test extends Component {
             } else {
                 this.setState({ isTestFinished: true });
             }
-        }, 500);
+        }, 1500);
     }
 
     handleFinishTest = async() => {
