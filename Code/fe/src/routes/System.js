@@ -6,11 +6,12 @@ import Header from '../containers/Header/Header';
 import AdminPage from '../containers/System/Admin/AdminPage'
 import ManageUser from '../containers/System/Admin/ManageUser'
 import ManageVoc from '../containers/System/Admin/ManageVoc'
+import AdminHeader from '../containers/System/Admin/AdminHeader';
 class System extends Component {
     render() {     
         const { systemMenuPath, isLoggedIn, userInfo } = this.props;
         return (
-            // userInfo && userInfo.roleId === 'ad' ? (
+            userInfo && userInfo.role === 1 ? (
                 <React.Fragment>
                     {/* {isLoggedIn && <Header />}  */}
                     <Router history={history}>
@@ -26,14 +27,14 @@ class System extends Component {
                     </div>
                     </Router>
                 </React.Fragment>
-            // ) : (
-            //     <div>
-            //         {isLoggedIn && <Header />} 
-            //         <div className='title mt-3 text-danger'>
-            //             BẠN KHÔNG CÓ QUYỀN HẠN CỦA ADMIN ĐỂ SỬ DỤNG CÁC CHỨC NĂNG NÀY !
-            //         </div>
-            //     </div>
-            // )
+            ) : (
+                <div>
+                    {isLoggedIn && <AdminHeader />} 
+                    <div className='title mt-3 text-danger'>
+                        BẠN KHÔNG CÓ QUYỀN HẠN CỦA ADMIN ĐỂ SỬ DỤNG CÁC CHỨC NĂNG NÀY !
+                    </div>
+                </div>
+            )
             
         );
     }

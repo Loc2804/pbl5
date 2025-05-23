@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { FormattedMessage } from 'react-intl';
+import { userRegister } from '../../../../services/userService';
+import { toast } from 'react-toastify';
 
 class SignUp extends Component {
     constructor(props)
@@ -36,8 +38,33 @@ class SignUp extends Component {
         this.setState(prevState => ({ isSignUp: !prevState.isSignUp }));
     };
 
-    handleSubmit = () => {
-        console.log(this.state);
+    handleClearInput = () => {
+        this.setState({
+            username: '',
+            password: '',
+            age: '',
+            phone: '',
+            address: '',
+            fullname: '',
+        });
+    };
+
+    handleSubmit = async () => {
+        let data ={
+            username: this.state.username,
+            password: this.state.password,
+            age: this.state.age,
+            phone: this.state.phone,
+            address: this.state.address,
+            fullname: this.state.fullname,
+        }
+        let res = await userRegister(data);
+        if (res && res.errCode === 0) {
+            toast.success('Register success!');
+            this.handleClearInput();
+        } else {
+            toast.error(res.error);
+        }
     };
     render() {     
         

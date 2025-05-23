@@ -4,6 +4,7 @@ import './UserAccount.scss';
 import { toast } from 'react-toastify';
 import { handleLoginApi } from '../../../../services/userService';
 import * as actions from "../../../../store/actions";
+import { userRegister } from '../../../../services/userService';
 class SignIn extends Component {
     constructor(props) {
         super(props);
@@ -22,18 +23,38 @@ class SignIn extends Component {
     handleOnChangeInput = (event, id) => {
         this.setState({ [id]: event.target.value });
     };
-
+    handleClearInput = () => {
+        this.setState({
+            username: '',
+            password: '',
+            age: '',
+            phone: '',
+            address: '',
+            fullname: '',
+            password_again: '',
+        });
+    }
     handleSubmit = async() => {
         if(this.state.isRegister) {
-            if (!this.state.username || !this.state.password || !this.state.fullName || !this.state.address || !this.state.phone) {
-                toast.error('Vui lòng điền đầy đủ thông tin đăng ký!');
-                return;
-            }
             if (this.state.password !== this.state.password_again) {
-                toast.error('Mật khẩu không khớp!');
+                toast.error('Password and confirm password do not match!');
                 return;
             }
-            toast.success('Đăng ký thành công!');
+            let data ={
+                username: this.state.username,
+                password: this.state.password,
+                age: this.state.age,
+                phone: this.state.phone,
+                address: this.state.address,
+                full_name: this.state.fullName,
+            }
+            let res = await userRegister(data);
+            if (res && res.user.errCode === 0) {
+                toast.success('Register success!');
+                this.handleClearInput();
+            } else {
+                toast.error(res.user.message);
+            }
         } else {
             if (!this.state.username || !this.state.password) {
                 toast.error('Vui lòng điền đầy đủ thông tin đăng nhập!');
@@ -51,7 +72,6 @@ class SignIn extends Component {
             }
                 
         }
-        console.log(this.state);
     };
 
     toggleShowPassword = () => {

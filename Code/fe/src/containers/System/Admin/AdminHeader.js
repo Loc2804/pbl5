@@ -4,7 +4,8 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import "./AdminPage.scss";
 import "./General.scss"
-
+import * as action from '../../../store/actions';
+import { withRouter } from 'react-router-dom';
 class AdminHeader extends Component {
     constructor(props) {
         super(props);
@@ -39,7 +40,10 @@ class AdminHeader extends Component {
             isShowDropDown: !this.state.isShowDropDown,
         });
     }
-
+    logOut = () => {
+        this.props.processLogout();
+        this.props.history.push('/login');
+    }
     render() {     
         return (
             <Fragment>
@@ -53,6 +57,7 @@ class AdminHeader extends Component {
                             </button>
                         </div>
                     </form>
+                    <div className='welcome' style={{ color: 'white' , minWidth: '200px'}}>Welcome, {this.props.userInfo && this.props.userInfo.full_name}</div>
                     <ul className="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                         <li className="nav-item dropdown">
                             <a className="nav-link" 
@@ -68,7 +73,7 @@ class AdminHeader extends Component {
                                     <li><a className="dropdown-item" href="#!">Settings</a></li>
                                     <li><a className="dropdown-item" href="#!">Activity Log</a></li>
                                     <li><hr className="dropdown-divider" /></li>
-                                    <li><a className="dropdown-item" href="#!">{this.props.isLoggedIn ? 'Logout' : 'Login'}</a></li>
+                                    <li><a className="dropdown-item" href="#!" onClick={this.logOut()}>Logout</a></li>
                                 </ul>
                             ) : null}
                         </li>
@@ -84,11 +89,14 @@ const mapStateToProps = state => {
         systemMenuPath: state.app.systemMenuPath,
         isLoggedIn: state.user.isLoggedIn,
         language: state.app.language,
+        userInfo: state.user.userInfo,
     };
 };
 
 const mapDispatchToProps = dispatch => {
-    return {};
+    return {
+        processLogout: () => dispatch(action.processLogout()),
+    };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AdminHeader);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AdminHeader));

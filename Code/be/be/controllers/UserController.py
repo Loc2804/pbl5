@@ -2,6 +2,7 @@ from rest_framework import status, views
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 
+from be.models import Role
 from be.serializers.UserResponseSerializer import UserResponseSerializer
 from be.services.UserService import (
     get_all_users, get_user_by_id, create_user,
@@ -72,8 +73,13 @@ class LoginView(views.APIView):
 
 class AccountView(views.APIView):
     def post(self, request):
-        data = request.data
-        data['role'] = 2
+        data = request.data.copy()  # Tạo bản sao để tránh sửa trực tiếp `request.data`
+        try:
+            role = Role.objects.get(id=2)
+        except Role.DoesNotExist:
+            return Response({"error": "Role not found."}, status=status.HTTP_400_BAD_REQUEST)
+
+        data['role'] = role  # Gán instance Role thay vì số nguyên
         username = data.get("username")
         password = data.get("password")
         full_name = data.get("full_name")
@@ -83,9 +89,9 @@ class AccountView(views.APIView):
 
         user = create_user(data)
         if not user:
-            return Response({"error": "Register failed."}, status=status.HTTP_200_OK)  # Changed to 200 OK
+            return Response({"user":user}, status=status.HTTP_200_OK)  # Changed to 200 OK
 
-        return Response({"Message": "Register Successful."}, status=status.HTTP_200_OK)
+        return Response({"user":user}, status=status.HTTP_200_OK)
 
     def put(self, request):
         data = request.data
@@ -106,6 +112,6 @@ class ForgotPasswordView(views.APIView):
 
         response = set_default_password(username, phone)
         if response['errCode'] == 0:
-            return Response({"message": response['message']}, status=status.HTTP_200_OK)
+            return Response({"response": response}, status=status.HTTP_200_OK)
 
-        return Response({"error": response['error']}, status=status.HTTP_200_OK)  # Changed to 200 OK
+        return Response({"response": response}, status=status.HTTP_200_OK)  # Changed to 200 OK

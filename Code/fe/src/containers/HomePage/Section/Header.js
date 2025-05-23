@@ -66,8 +66,7 @@ class Header extends Component {
                             </div>
                         ) : (
                             <div className="auth-buttons d-flex">
-                                <Link to="/pages/logon" className="btn btn-outline-primary me-2 rounded-pill">Đăng nhập</Link>
-                                <Link to="/pages/register" className="btn btn-primary text-white rounded-pill">Đăng ký</Link>
+                                <Link to="/pages/logon" className="btn btn-outline-primary me-2 rounded-pill">Đăng nhập</Link>                            
                             </div>
                         )}
                     </div>

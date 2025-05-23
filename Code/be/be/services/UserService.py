@@ -110,7 +110,7 @@ def login_user(username, password):
     }
 
 def set_default_password(username, phone):
-    user = User.objects.filter(username=username)
+    user = User.objects.filter(username=username).first()
     if not user:  # Kiểm tra user có tồn tại không
         return {
             "errCode": 1,

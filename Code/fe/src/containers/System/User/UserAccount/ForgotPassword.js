@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import { connect } from "react-redux";
 import './UserAccount.scss';
 import { toast } from 'react-toastify';
+import { forgotPassword } from '../../../../services/userService'
+
 class ForgotPassword extends Component {
     constructor(props) {
         super(props);
@@ -11,26 +13,29 @@ class ForgotPassword extends Component {
         };
     }
 
+    componentDidMount = () =>{
+
+    }
     handleOnChangeInput = (event, id) => {
         this.setState({ [id]: event.target.value });
     };
 
-    handleSubmit = () => {
+    handleSubmit =  async() => {
         // Handle form submission logic here
         if (!this.state.username || !this.state.phone) {
-            toast.error('Vui lòng nhập đầy đủ thông tin!',{
-                position: toast.POSITION.TOP_RIGHT,
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "colored", // hoặc "light", "dark"
-            });
+            toast.error('Vui lòng nhập đầy đủ thông tin!');
             return;
         }
-        console.log(this.state);
+        let res = await forgotPassword({
+            username: this.state.username,
+            phone: this.state.phone,
+        })
+        if(res && res.response.errCode === 0){
+            toast.success(res.response.message);
+        }
+        else{
+            toast.error(res.response.error);
+        }
     };
 
     render() {
@@ -84,7 +89,7 @@ class ForgotPassword extends Component {
                                 />
                             </div>
 
-                            <button className="btn btn-info text-white w-100 rounded-pill" onClick={this.handleSubmit}>
+                            <button className="btn btn-info text-white w-100 rounded-pill" onClick={() => this.handleSubmit()}>
                                 Tìm lại mật khẩu
                             </button>
 

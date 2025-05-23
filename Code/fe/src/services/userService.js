@@ -81,10 +81,19 @@ const getListHistoryTest = (user_id) =>{
 }
 
 
+const userRegister = (data) =>{
+    return axios.post(`/api/account/`,data)
+}
+
+const forgotPassword = (data) =>{
+    return axios.put(`/api/forgot-password/`,data)
+}
+
+
 export {
     handleLoginApi, getAllUserService, createNewUserService, 
     deleteUserService, editUserService, getUserById, getAllCategory,
     getAllVocService, createNewVocService, deleteVocService, editVocService, getVocById,
     speakingTest,saveUserResult,updateProgress,getListUserVoc,getPredictionImage,
-    getListHistoryTest
+    getListHistoryTest,userRegister,forgotPassword
 };
